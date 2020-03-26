@@ -128,31 +128,5 @@
     "picture_link": "http://www.nala.co.il",
     "ownerId": "6f7dbfdb-adf7-4be4-9610-c400af4c560c",
     "ownerName": "ido"
-  },
-  {
-    "id": "92a5b97b-4330-447e-bfb6-2334767f10ac",
-    "name": "Bell",
-    "age": 12,
-    "color": "black",
-    "weight": 17.0,
-    "availability": true,
-    "description": "Good pet , very faithful",
-    "category": "DOGS",
-    "picture_link": "http://www.nala.co.il",
-    "ownerId": "6f7dbfdb-adf7-4be4-9610-c400af4c560c",
-    "ownerName": "ido"
-  },
-  {
-    "id": "92a5b97b-4330-447e-bfb6-2334767f10ac",
-    "name": "Bell",
-    "age": 12,
-    "color": "black",
-    "weight": 17.0,
-    "availability": true,
-    "description": "Good pet , very faithful",
-    "category": "DOGS",
-    "picture_link": "http://www.nala.co.il",
-    "ownerId": "6f7dbfdb-adf7-4be4-9610-c400af4c560c",
-    "ownerName": "ido"
   }
 ]

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27e7545c-04f0-4816-be35-677d2021f91a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/pages/adopt.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/kitten.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/adopt.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/adopt.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/adopt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/adopt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +51,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pets-adoption-service" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v12.13.1-win-x64/node" />
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -99,7 +102,7 @@
       <workItem from="1585064411036" duration="2489000" />
       <workItem from="1585121456332" duration="895000" />
       <workItem from="1585123174606" duration="23491000" />
-      <workItem from="1585206775222" duration="14219000" />
+      <workItem from="1585206775222" duration="18313000" />
     </task>
     <task id="LOCAL‎00001" summary="Added components and images">
       <created>1585207169353</created>
@@ -107,7 +110,13 @@
       <option name="presentableId" value="LOCAL‎00001" />
       <updated>1585207169354</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎00002" summary="Added table to Adopt page">
+      <created>1585252519881</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1585252519881</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,9 +136,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added components and images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added components and images" />
+    <MESSAGE value="Added table to Adopt page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added table to Adopt page" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="392" y="90" key="#ESLint" timestamp="1585255215366">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="90" key="#ESLint/0.0.1600.860@0.0.1600.860" timestamp="1585255215366" />
     <state x="528" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584901788577">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -138,10 +152,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="551" y="298" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1585224490630" />
-    <state x="421" y="27" key="CommitChangelistDialog2" timestamp="1585207168568">
+    <state x="18" y="2" width="1537" height="814" key="CommitChangelistDialog2" timestamp="1585252519532">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="421" y="27" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585207168568" />
+    <state x="18" y="2" width="1537" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585252519532" />
     <state x="580" y="173" key="FileChooserDialogImpl" timestamp="1585227842441">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -150,22 +164,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="654" y="314" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1584643610425" />
-    <state width="1556" height="209" key="GridCell.Tab.0.bottom" timestamp="1585245322744">
+    <state width="1556" height="209" key="GridCell.Tab.0.bottom" timestamp="1585256161809">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="209" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585245322744" />
-    <state width="1556" height="209" key="GridCell.Tab.0.center" timestamp="1585245322744">
+    <state width="1556" height="209" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
+    <state width="1556" height="209" key="GridCell.Tab.0.center" timestamp="1585256161809">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="209" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585245322744" />
-    <state width="1556" height="209" key="GridCell.Tab.0.left" timestamp="1585245322744">
+    <state width="1556" height="209" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
+    <state width="1556" height="209" key="GridCell.Tab.0.left" timestamp="1585256161809">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="209" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585245322744" />
-    <state width="1556" height="209" key="GridCell.Tab.0.right" timestamp="1585245322744">
+    <state width="1556" height="209" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
+    <state width="1556" height="209" key="GridCell.Tab.0.right" timestamp="1585256161809">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="209" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585245322744" />
+    <state width="1556" height="209" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
     <state width="1556" height="270" key="GridCell.Tab.1.bottom" timestamp="1585240462095">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -218,14 +232,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="333" y="116" width="1060" height="630" key="IDE.errors.dialog/0.0.1600.860@0.0.1600.860" timestamp="1585224466281" />
-    <state x="243" y="73" width="1193" height="738" key="SettingsEditor" timestamp="1585245432746">
+    <state x="304" y="82" width="1193" height="738" key="SettingsEditor" timestamp="1585255998621">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="243" y="73" width="1193" height="738" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585245432746" />
-    <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1585207237592">
+    <state x="304" y="82" width="1193" height="738" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585255998621" />
+    <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1585252540881">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="165" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1585207237592" />
+    <state x="392" y="165" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1585252540881" />
     <state x="471" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1585206777677">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
