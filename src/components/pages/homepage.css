@@ -1,0 +1,31 @@
+.container-fluid {
+    color: white;
+    width: 40%;
+    position: absolute;
+    left: 240px;
+    top: 200px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    color: white;
+    text-align:  center;
+    width:  175px;
+    border:  2px solid white;
+    overflow: hidden;
+    outline:none;
+    transition-duration: 0.4s;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+}

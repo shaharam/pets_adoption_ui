@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+
+nav {
+    font-size: 22px;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+li {
+    display: inline;
+    padding-left: 10px;
+}
+
+a:link, a:visited {
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}

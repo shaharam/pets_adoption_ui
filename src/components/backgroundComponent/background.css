@@ -1,0 +1,7 @@
+.background {
+    background-image: url(../../img/bg.jpg);
+    /*position: absolute;*/
+    object-fit: fill;
+    width: 100px;
+    height: 900px;
+}
