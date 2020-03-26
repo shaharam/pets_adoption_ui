@@ -8,10 +8,10 @@ class Homepage extends Component {
 
                 <h1>
                     ADOPT US.
-                    <br></br>
+                    <br/>
                     WE NEED YOUR HELP.
                 </h1>
-                <br></br>
+                <br/>
                 <form>
                     <button type="submit" formAction="adopt">ADOPT A PET</button>
                     <button type="submit" formAction="hand_over">HAND OVER A PET</button>

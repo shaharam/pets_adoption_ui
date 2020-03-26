@@ -1,0 +1,25 @@
+#pets {
+    margin-top: 40px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 3px solid white;
+    width: 95%;
+}
+
+#pets td, #pets th {
+    border: 1px solid white;
+    padding: 8px;
+    color: white;
+}
+
+#pets tr:hover {background-color: slategray}
+
+#pets th {
+    height: 50px;
+    text-align: center;
+    background-color: darkgrey;
+    color: white;
+}
