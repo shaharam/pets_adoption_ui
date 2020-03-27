@@ -29,7 +29,7 @@ class Adopt extends Component {
                     <td>{category}</td>
                     {/* eslint-disable-next-line react/jsx-no-target-blank */}
                     <td><a href={picture_link} target="_blank">See Me!</a></td>
-                    <td><a href="aaa">Adopt Me</a></td>
+                    <td><a href="FIX URL">Adopt Me</a></td>
                 </tr>
             )
         })
