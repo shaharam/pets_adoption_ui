@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27e7545c-04f0-4816-be35-677d2021f91a" name="Default Changelist" comment="">
+    <list default="true" id="27e7545c-04f0-4816-be35-677d2021f91a" name="Default Changelist" comment="Added table to Adopt page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/adopt.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/adopt.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/adopt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/adopt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +51,10 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v12.13.1-win-x64/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -76,6 +71,9 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="App.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/App.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -86,6 +84,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.App.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -103,6 +106,9 @@
       <workItem from="1585121456332" duration="895000" />
       <workItem from="1585123174606" duration="23491000" />
       <workItem from="1585206775222" duration="18313000" />
+      <workItem from="1585312695947" duration="25000" />
+      <workItem from="1585312765184" duration="439000" />
+      <workItem from="1585313237360" duration="813000" />
     </task>
     <task id="LOCAL‎00001" summary="Added components and images">
       <created>1585207169353</created>
@@ -127,7 +133,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -148,37 +156,47 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="528" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1584901788577" />
+    <state x="402" y="62" key="#npm_start" timestamp="1585313204530">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="402" y="62" key="#npm_start/0.0.1366.728@0.0.1366.728" timestamp="1585313204530" />
     <state x="551" y="298" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1585224490630">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="551" y="298" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1585224490630" />
-    <state x="18" y="2" width="1537" height="814" key="CommitChangelistDialog2" timestamp="1585252519532">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="257" y="0" width="1537" height="814" key="CommitChangelistDialog2" timestamp="1585313911982">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="257" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585313911982" />
     <state x="18" y="2" width="1537" height="814" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1585252519532" />
-    <state x="580" y="173" key="FileChooserDialogImpl" timestamp="1585227842441">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="495" y="146" key="FileChooserDialogImpl" timestamp="1585313203978">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="495" y="146" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585313203978" />
     <state x="580" y="173" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1585227842441" />
     <state x="654" y="314" key="Github.ShareDialog" timestamp="1584643610425">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="654" y="314" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1584643610425" />
-    <state width="1556" height="209" key="GridCell.Tab.0.bottom" timestamp="1585256161809">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1585313509952">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585313509952" />
     <state width="1556" height="209" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
-    <state width="1556" height="209" key="GridCell.Tab.0.center" timestamp="1585256161809">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1585313509952">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585313509952" />
     <state width="1556" height="209" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
-    <state width="1556" height="209" key="GridCell.Tab.0.left" timestamp="1585256161809">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1585313509952">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585313509952" />
     <state width="1556" height="209" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
-    <state width="1556" height="209" key="GridCell.Tab.0.right" timestamp="1585256161809">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1585313509952">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585313509952" />
     <state width="1556" height="209" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585256161809" />
     <state width="1556" height="270" key="GridCell.Tab.1.bottom" timestamp="1585240462095">
       <screen x="0" y="0" width="1600" height="860" />
@@ -232,9 +250,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="333" y="116" width="1060" height="630" key="IDE.errors.dialog/0.0.1600.860@0.0.1600.860" timestamp="1585224466281" />
-    <state x="304" y="82" width="1193" height="738" key="SettingsEditor" timestamp="1585255998621">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="260" y="20" width="1019" height="708" key="SettingsEditor" timestamp="1585313124736">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="260" y="20" width="1019" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585313124736" />
     <state x="304" y="82" width="1193" height="738" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1585255998621" />
     <state x="392" y="165" key="Vcs.Push.Dialog.v2" timestamp="1585252540881">
       <screen x="0" y="0" width="1600" height="860" />
@@ -252,6 +271,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="611" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1585143618610" />
+    <state x="387" y="180" key="git4idea.merge.GitPullDialog" timestamp="1585318314261">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="387" y="180" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1585318314261" />
+    <state x="403" y="172" key="jetbrains.nodejs.interpreters-dialog" timestamp="1585313152773">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="403" y="172" key="jetbrains.nodejs.interpreters-dialog/0.0.1366.728@0.0.1366.728" timestamp="1585313152773" />
     <state x="456" y="190" key="run.anything.popup" timestamp="1585243285081">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
