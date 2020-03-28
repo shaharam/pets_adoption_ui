@@ -4,20 +4,19 @@ import data from '../../data/data'
 
 class Adopt extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = data
         }
 
-    renderTableHeader() {
-        let header = Object.keys(this.state[0]);
-
-        return header.map((key, index) => {
-            return <th key={index}>{key.toUpperCase()}</th>
-        })
+    importAll(r) {
+        let images = {};
+        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+        return images;
     }
 
     renderTableData() {
         return this.state.map((pet, index) => {
+            const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             const {name, age, color, weight, description, category, picture_link} = pet; //destructuring
             return (
                 <tr key={name}>
@@ -27,8 +26,7 @@ class Adopt extends Component {
                     <td>{weight}</td>
                     <td>{description}</td>
                     <td>{category}</td>
-                    {/* eslint-disable-next-line react/jsx-no-target-blank */}
-                    <td><a href={picture_link} target="_blank">See Me!</a></td>
+                    <td><a href={images[picture_link]} data-title="A new page" target="_blank" rel="noopener noreferrer">See Me!</a></td>
                     <td><a href="FIX URL">Adopt Me</a></td>
                 </tr>
             )
