@@ -26,6 +26,6 @@ button {
 
 button:hover {
     background-color: white;
-    color: black;
-    font-size: 18px;
+    font-weight: bold;
+    color: goldenrod;
 }
