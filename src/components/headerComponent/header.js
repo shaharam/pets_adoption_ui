@@ -35,6 +35,13 @@ class Header extends Component {
                         <li className="last">
                             <Link to='/Contact_us'>Contact us</Link>
                         </li>
+                        <login>
+                                <Link to='/Log_in'>Log in</Link>
+                        </login>
+                        &nbsp;&nbsp;&nbsp;
+                        <signup>
+                            <Link to='/Sign_up'>Sign up</Link>
+                        </signup>
                     </ul>
                 </nav>
             </header>

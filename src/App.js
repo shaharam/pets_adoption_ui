@@ -14,6 +14,7 @@ import Hand_over from "./components/pages/hand_over";
 import My_zone from "./components/pages/my_zone";
 import About from "./components/pages/about";
 import Contact_us from "./components/pages/contact_us";
+import Sign_up from "./components/pages/Sign_up";
 
 class App extends Component {
   render() {
@@ -29,6 +30,8 @@ class App extends Component {
             <Route exact path='/My_Zone' component={My_zone} />
             <Route exact path='/About' component={About} />
             <Route exact path='/Contact_us' component={Contact_us} />
+            <Route exact path='/Sign_up' component={Sign_up} />
+
 
             <Footer />
 

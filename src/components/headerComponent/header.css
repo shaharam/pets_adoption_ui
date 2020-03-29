@@ -27,3 +27,24 @@ a:link, a:visited {
 a:hover {
     color: goldenrod;
 }
+
+login {
+    margin-left: 5em;
+    border: medium solid white;
+    color: goldenrod;
+    display: inline;
+    padding-left: 10px;
+    text-align: justify;
+    font-weight: bold;
+
+}
+
+signup {
+    border: medium solid white;
+    color: goldenrod;
+    display: inline;
+    padding-left: 10px;
+    text-align: justify;
+    font-weight: bold;
+
+}
