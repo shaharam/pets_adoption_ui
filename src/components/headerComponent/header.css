@@ -36,6 +36,7 @@ login {
     padding-left: 10px;
     text-align: justify;
     font-weight: bold;
+    background-color: burlywood;
 
 }
 
@@ -46,5 +47,11 @@ signup {
     padding-left: 10px;
     text-align: justify;
     font-weight: bold;
+    background-color: burlywood;
 
 }
+
+login:hover {
+    color: white;
+}
+

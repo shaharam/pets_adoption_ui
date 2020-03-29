@@ -40,7 +40,7 @@ class Header extends Component {
                         </login>
                         &nbsp;&nbsp;&nbsp;
                         <signup>
-                            <Link to='/Sign_up'>Sign up</Link>
+                            <Link to='/Sign_up'>Join us</Link>
                         </signup>
                     </ul>
                 </nav>
