@@ -25,7 +25,7 @@ class Sign_up extends Component{
                         <label htmlFor="phone">Phone</label>
                         <br></br>
                         <input type="text" id="phone" name="phone>"/>
-                        <br></br>
+                        <br></br><br></br>
                         <input type="submit" id="submit" value="Sign up"/>
                         <br></br><br></br>
 

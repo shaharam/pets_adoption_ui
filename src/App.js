@@ -15,6 +15,7 @@ import My_zone from "./components/pages/my_zone";
 import About from "./components/pages/about";
 import Contact_us from "./components/pages/contact_us";
 import Sign_up from "./components/pages/Sign_up";
+import log_in from "./components/pages/log_in";
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path='/About' component={About} />
             <Route exact path='/Contact_us' component={Contact_us} />
             <Route exact path='/Sign_up' component={Sign_up} />
+            <Route exact path='/log_in' component={log_in}/>
 
 
             <Footer />

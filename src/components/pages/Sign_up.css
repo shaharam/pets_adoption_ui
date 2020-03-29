@@ -16,13 +16,11 @@ input[type=text],[type=password] {
 }
 
 input[type=submit] {
-    position: fixed;
-    left: 305px;
-    bottom: 47px;
-    width: 10%;
+    width: 25%;
     background-color: burlywood;
     border: solid burlywood;
     font-weight: bold;
+    padding-left: 10px;
 
 }
 
@@ -38,7 +36,7 @@ form {
     border-width: 10px;
     border-color: black;
     border-radius: 25px;
-    padding: 30px 1px 50px 30px;
+    padding: 10px 1px 10px 30px;
 
 }
 
