@@ -1,5 +1,13 @@
+h1 {
+    font-size: 40px;
+    font-style: italic;
+    color: burlywood;
+}
+
 label{
-    color: whitesmoke;
+    color: burlywood;
+    font-size: 15px;
+    font-style: italic;
 }
 
 input[type=text],[type=password] {
@@ -12,8 +20,8 @@ input[type=submit] {
     left: 305px;
     bottom: 47px;
     width: 10%;
-    background-color: navajowhite;
-    border: solid navajowhite;
+    background-color: burlywood;
+    border: solid burlywood;
     font-weight: bold;
 
 }
@@ -22,5 +30,19 @@ input[type=submit]:hover {
     background-color: antiquewhite;
     border: solid antiquewhite;
     transition-duration: 0.7s;
+
+}
+
+form {
+    border-style: solid;
+    border-width: 10px;
+    border-color: black;
+    border-radius: 25px;
+    padding: 30px 1px 50px 30px;
+
+}
+
+#sign_up {
+    padding-left: 10px;
 
 }
