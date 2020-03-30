@@ -17,15 +17,15 @@ class Contact_us extends Component {
                 </h6>
 
                 <form id="contact">
-                    <label for="name">Name:</label>
+                    <label htmlFor="name">Name:</label>
                     <br/>
-                    <input type="text" id="name" name="fname>" placeholder='Name' required/>
+                    <input type="text" id="name" name="name" placeholder='Name' required/>
                     <br/>
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <br/>
-                    <input type="email" id="email" name="email>" placeholder='Email' required/>
+                    <input type="email" id="email" name="email" placeholder='Email' required/>
                     <br/>
-                    <label for="subject">Subject:</label>
+                    <label htmlFor="subject">Subject:</label>
                     <br/>
                     <select id="subject" name="subject" form="contact" required>
                         <option value="" disabled selected>Select your subject</option>
@@ -36,9 +36,9 @@ class Contact_us extends Component {
                         <option value="Other">Other</option>
                     </select>
                     <br/>
-                    <label for="message">Message:</label>
+                    <label htmlFor="message">Message:</label>
                     <br/>
-                    <textarea id="message" name="message" placeholder='Message' rows="5" cols="50" maxlength="150" required>
+                    <textarea id="message" name="message" placeholder='Message' rows="5" cols="50" maxLength="150" required>
                     </textarea>
                     <br/>
                     <br/>

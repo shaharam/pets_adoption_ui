@@ -1,0 +1,17 @@
+select:required:invalid {
+    color: gray;
+}
+option[value=""][disabled] {
+    display: none;
+}
+option {
+    color: black;
+}
+
+input, select {
+    width: 45%;
+}
+
+textarea {
+    resize: none;
+}

@@ -21,12 +21,12 @@ class Adopt extends Component {
             const {name, age, color, weight, description, category, picture_link} = pet; //destructuring
             return (
                 <tr key={name}>
+                    <td>{category}</td>
                     <td>{name}</td>
                     <td>{age}</td>
                     <td>{color}</td>
                     <td>{weight}</td>
                     <td>{description}</td>
-                    <td>{category}</td>
                     <td><a href={images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
                     <td><a href="FIX URL">Adopt Me</a></td>
                 </tr>
@@ -40,13 +40,12 @@ class Adopt extends Component {
                 <table id="pets">
                     <tbody>
                         <tr>
-                            {/*<th>#</th>*/}
+                            <th>CATEGORY</th>
                             <th>NAME</th>
                             <th>AGE</th>
                             <th>COLOR</th>
                             <th>WEIGHT</th>
                             <th>DESCRIPTION</th>
-                            <th>CATEGORY</th>
                             <th>PICTURE</th>
                             <th>ADOPT</th>
                         </tr>
