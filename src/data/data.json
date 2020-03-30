@@ -1,10 +1,10 @@
 [
   {
     "id": "164b2e5e-6fe1-4287-94d9-81a9bbf4e3a9",
-    "name": "Nalla",
-    "age": 12,
+    "name": "",
+    "age": 0,
     "color": "black",
-    "weight": 17.0,
+    "weight": 0.0,
     "availability": true,
     "description": "Good pet , very faithful",
     "category": "CATS",

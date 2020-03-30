@@ -18,7 +18,14 @@ class Adopt extends Component {
     renderTableData() {
         return this.state.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
-            const {name, age, color, weight, description, category, picture_link} = pet; //destructuring
+            let {name, age, color, weight, description, category, picture_link} = pet; //destructuring
+            if (age === 0) {
+                age = ""
+            }
+            if (weight === 0.0) {
+                weight = ""
+            }
+
             return (
                 <tr key={name}>
                     <td>{category}</td>

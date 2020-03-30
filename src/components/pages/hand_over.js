@@ -10,7 +10,6 @@ class Hand_over extends Component {
                 </h1>
 
                 <form id="hand_over">
-                    <label htmlFor="category">Category:</label>
                     <br/>
                     <select id="category" name="category" form="hand_over" required>
                         <option value="" disabled selected>Select category</option>
@@ -36,32 +35,26 @@ class Hand_over extends Component {
                     </select>
                     <br/>
 
-                    <label htmlFor="name">Name:</label>
                     <br/>
-                    <input type="text" id="name" name="name" placeholder='Name' required/>
-                    <br/>
-
-                    <label htmlFor="age">Age:</label>
-                    <br/>
-                    <input type="number" id="age" name="age" placeholder='Age' min="1" max="120" required/>
+                    <input type="text" id="name" name="name" placeholder='Name'/>
                     <br/>
 
-                    <label htmlFor="color">Color:</label>
+                    <br/>
+                    <input type="number" id="age" name="age" placeholder='Age' min="1" max="120"/>
+                    <br/>
+
                     <br/>
                     <input type="text" id="color" name="color" placeholder='Color' required/>
                     <br/>
 
-                    <label htmlFor="weight">Weight:</label>
                     <br/>
-                    <input type="number" id="weight" name="Weight" placeholder='Weight in Kg' min="1" required/>
+                    <input type="number" id="weight" name="Weight" placeholder='Weight in Kg' min="1"/>
                     <br/>
 
-                    <label htmlFor="picture">Picture:</label>
                     <br/>
                     <input type="file" id="picture" name="picture" accept="image/*" required/>
                     <br/>
 
-                    <label htmlFor="description">Description:</label>
                     <br/>
                     <textarea id="description" name="description" placeholder='Description' rows="3" cols="50" maxLength="100"
                               required>
