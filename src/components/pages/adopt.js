@@ -8,6 +8,7 @@ class Adopt extends Component {
         this.state = data
         }
 
+
     importAll(r) {
         let images = {};
         // eslint-disable-next-line array-callback-return
@@ -43,6 +44,7 @@ class Adopt extends Component {
 
     render() {
         return (
+
             <div className="adopt">
                 <table id="pets">
                     <tbody>
