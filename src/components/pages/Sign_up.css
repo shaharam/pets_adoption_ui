@@ -1,9 +1,3 @@
-#sign_up {
-    font-size: 40px;
-    font-style: italic;
-    color: burlywood;
-}
-
 label{
     color: burlywood;
     font-size: 15px;
@@ -30,16 +24,11 @@ input[type=submit]:hover {
 
 }
 
-form {
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    border-radius: 25px;
-    padding: 10px 1px 10px 30px;
+/*form {*/
+/*    border-style: solid;*/
+/*    border-width: 2px;*/
+/*    border-color: black;*/
+/*    border-radius: 25px;*/
+/*    padding: 10px 1px 10px 30px;*/
 
-}
-
-#sign_up {
-    padding-left: 10px;
-
-}
+/*}*/

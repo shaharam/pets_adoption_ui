@@ -30,25 +30,34 @@ a:hover {
 
 login {
     margin-left: 5em;
-    border: medium solid white;
-    color: goldenrod;
-    display: inline;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border:  2px solid white;
     padding-left: 10px;
     text-align: justify;
     font-weight: bold;
-    background-color: burlywood;
 
 }
 
 signup {
-    border: medium solid white;
-    color: goldenrod;
-    display: inline;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border:  2px solid white;
     padding-left: 10px;
     text-align: justify;
     font-weight: bold;
-    background-color: burlywood;
+}
 
+signup:hover {
+    background-color: white;
+    font-weight: bold;
+    color: goldenrod;
+}
+
+login:hover {
+    background-color: white;
+    font-weight: bold;
+    color: goldenrod;
 }
 
 

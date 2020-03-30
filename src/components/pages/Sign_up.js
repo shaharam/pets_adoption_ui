@@ -6,25 +6,26 @@ class Sign_up extends Component{
         return (
             <div className="container-fluid">
                 <h1 id="sign_up">Sign up</h1>
+                <br></br>
 
 
                 <form>
 
-                        <label for="fname">Full name</label>
+                        {/*<label for="fname">Full name</label>*/}
+                        {/*<br></br>*/}
+                        <input type="text" id="fname" name="fname>" placeholder="Name" required/>
                         <br></br>
-                        <input type="text" id="fname" name="fname>"/>
+                        {/*<label htmlFor="email">Email</label>*/}
                         <br></br>
-                        <label htmlFor="email">Email</label>
+                        <input type="text" id="email" name="email>" placeholder="Email" required/>
                         <br></br>
-                        <input type="text" id="email" name="email>"/>
+                        {/*<label htmlFor="password">Password</label>*/}
                         <br></br>
-                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password>" placeholder="Password" minLength="8" required/>
                         <br></br>
-                        <input type="password" id="password" name="password>"/>
+                        {/*<label htmlFor="phone">Phone</label>*/}
                         <br></br>
-                        <label htmlFor="phone">Phone</label>
-                        <br></br>
-                        <input type="text" id="phone" name="phone>"/>
+                        <input type="text" id="phone" name="phone>" placeholder="Phone" required/>
                         <br></br><br></br>
                         <input type="submit" id="submit" value="Sign up"/>
                         <br></br><br></br>
