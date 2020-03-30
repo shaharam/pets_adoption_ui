@@ -10,12 +10,13 @@ class Adopt extends Component {
 
     importAll(r) {
         let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+        // eslint-disable-next-line array-callback-return
+        r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
         return images;
     }
 
     renderTableData() {
-        return this.state.map((pet, index) => {
+        return this.state.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             const {name, age, color, weight, description, category, picture_link} = pet; //destructuring
             return (
@@ -26,7 +27,7 @@ class Adopt extends Component {
                     <td>{weight}</td>
                     <td>{description}</td>
                     <td>{category}</td>
-                    <td><a href={images[picture_link]} data-title="A new page" target="_blank" rel="noopener noreferrer">See Me!</a></td>
+                    <td><a href={images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
                     <td><a href="FIX URL">Adopt Me</a></td>
                 </tr>
             )

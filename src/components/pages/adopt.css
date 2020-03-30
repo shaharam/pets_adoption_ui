@@ -18,6 +18,7 @@
 
 #pets a {
     color: black;
+    text-decoration: underline;
 }
 
 #pets tr:hover {background-color: slategray}

@@ -13,8 +13,8 @@ class Homepage extends Component {
                 </h1>
                 <br/>
                 <form>
-                    <button type="submit" formAction="adopt">ADOPT A PET</button>
-                    <button type="submit" formAction="hand_over">HAND OVER A PET</button>
+                    <button type="submit" formAction="/Adopt">ADOPT A PET</button>
+                    <button type="submit" formAction="/Hand_over">HAND OVER A PET</button>
                 </form>
             </div>
         );
