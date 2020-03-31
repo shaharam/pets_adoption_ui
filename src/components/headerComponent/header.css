@@ -29,35 +29,57 @@ a:hover {
 }
 
 login {
-    margin-left: 5em;
+    margin-left: 4em;
     background-color: Transparent;
     background-repeat: no-repeat;
+    color: white;
+    text-align:  center;
+    width:  175px;
     border:  2px solid white;
-    padding-left: 10px;
-    text-align: justify;
-    font-weight: bold;
-
+    overflow: hidden;
+    outline:none;
+    transition-duration: 0.4s;
+    padding: 6px;
 }
 
 signup {
-    background-color: Transparent;
     background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    width:  175px;
     border:  2px solid white;
-    padding-left: 10px;
-    text-align: justify;
-    font-weight: bold;
+    overflow: hidden;
+    outline:none;
+    transition-duration: 0.4s;
+    padding: 6px;
 }
+
+/*loginSignup {*/
+/*    background-color: Transparent;*/
+/*    background-repeat: no-repeat;*/
+/*    color: white;*/
+/*    text-align:  center;*/
+/*    width:  175px;*/
+/*    border:  2px solid white;*/
+/*    overflow: hidden;*/
+/*    outline:none;*/
+/*    transition-duration: 0.4s;*/
+/*    padding: 10px;*/
+/*    margin-right: 20px;*/
+/*}*/
 
 signup:hover {
     background-color: white;
-    font-weight: bold;
     color: goldenrod;
+    font-weight: bold;
 }
 
 login:hover {
     background-color: white;
-    font-weight: bold;
     color: goldenrod;
+    overflow: hidden;
+    font-weight: bold;
+
 }
 
 
