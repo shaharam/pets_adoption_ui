@@ -15,7 +15,7 @@ ul {
 
 li {
     display: inline;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
 }
 
 a:link, a:visited {
@@ -29,7 +29,7 @@ a:hover {
 }
 
 login {
-    margin-left: 4em;
+    margin-left: 8em;
     background-color: Transparent;
     background-repeat: no-repeat;
     color: white;
@@ -39,7 +39,7 @@ login {
     overflow: hidden;
     outline:none;
     transition-duration: 0.4s;
-    padding: 6px;
+    padding: 5px;
 }
 
 signup {
@@ -51,22 +51,8 @@ signup {
     overflow: hidden;
     outline:none;
     transition-duration: 0.4s;
-    padding: 6px;
+    padding: 5px;
 }
-
-/*loginSignup {*/
-/*    background-color: Transparent;*/
-/*    background-repeat: no-repeat;*/
-/*    color: white;*/
-/*    text-align:  center;*/
-/*    width:  175px;*/
-/*    border:  2px solid white;*/
-/*    overflow: hidden;*/
-/*    outline:none;*/
-/*    transition-duration: 0.4s;*/
-/*    padding: 10px;*/
-/*    margin-right: 20px;*/
-/*}*/
 
 signup:hover {
     background-color: white;
