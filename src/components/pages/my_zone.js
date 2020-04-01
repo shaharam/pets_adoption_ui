@@ -27,7 +27,7 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            if (availability = true){
+            if (availability == true){
                 availability = <button type="button" id="removePet">Remove pet</button>
             }
             else {
