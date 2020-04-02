@@ -29,7 +29,7 @@ a:hover {
 
 login {
     position: absolute;
-    right: 220px;
+    right: 280px;
     background-color: Transparent;
     background-repeat: no-repeat;
     color: white;
@@ -44,7 +44,7 @@ login {
 
 signup {
     position: absolute;
-    right: 70px;
+    right: 130px;
     background-repeat: no-repeat;
     color: white;
     text-align: center;
