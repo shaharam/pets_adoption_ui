@@ -1,7 +1,28 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import './hand_over.css'
+// import data from "../../data/data";
+
 class Hand_over extends Component {
+    state = {
+        categories: []
+    };
+
+    getCategories() {
+        axios.get(`http://localhost:8080/pas/v1/admin/pets/adoption/pets/categories`)
+            .then(res => {
+                const categories = res.data;
+                this.setState({ categories });
+            })
+    }
+
     render() {
+        this.getCategories();
+        const categories = [];
+        for (const value of this.state.categories) {
+            categories.push(<option value={value}>{value}</option>)
+        }
+
         return (
             <div className="container-fluid">
 
@@ -13,25 +34,26 @@ class Hand_over extends Component {
                     <br/>
                     <select id="category" name="category" form="hand_over" required>
                         <option value="" disabled selected>Select category</option>
-                        <option value="DOGS">DOGS</option>
-                        <option value="CATS">CATS</option>
-                        <option value="FISHES">FISHES</option>
-                        <option value="SNAKES">SNAKES</option>
-                        <option value="HORSES">HORSES</option>
-                        <option value="PARROTS">PARROTS</option>
-                        <option value="OWLS">OWLS</option>
-                        <option value="BIRDS">BIRDS</option>
-                        <option value="RABBITS">RABBITS</option>
-                        <option value="SQUIRRELS">SQUIRRELS</option>
-                        <option value="LIZARDS">LIZARDS</option>
-                        <option value="IGUANAS">IGUANAS</option>
-                        <option value="HEDGEHOGS">HEDGEHOGS</option>
-                        <option value="BATS">BATS</option>
-                        <option value="TURTLES">TURTLES</option>
-                        <option value="SHEEP">SHEEP</option>
-                        <option value="FERRETS">FERRETS</option>
-                        <option value="DONKEY">DONKEY</option>
-                        <option value="SPIDERS">SPIDERS</option>
+                        {categories}
+                        {/*<option value="DOGS">DOGS</option>*/}
+                        {/*<option value="CATS">CATS</option>*/}
+                        {/*<option value="FISHES">FISHES</option>*/}
+                        {/*<option value="SNAKES">SNAKES</option>*/}
+                        {/*<option value="HORSES">HORSES</option>*/}
+                        {/*<option value="PARROTS">PARROTS</option>*/}
+                        {/*<option value="OWLS">OWLS</option>*/}
+                        {/*<option value="BIRDS">BIRDS</option>*/}
+                        {/*<option value="RABBITS">RABBITS</option>*/}
+                        {/*<option value="SQUIRRELS">SQUIRRELS</option>*/}
+                        {/*<option value="LIZARDS">LIZARDS</option>*/}
+                        {/*<option value="IGUANAS">IGUANAS</option>*/}
+                        {/*<option value="HEDGEHOGS">HEDGEHOGS</option>*/}
+                        {/*<option value="BATS">BATS</option>*/}
+                        {/*<option value="TURTLES">TURTLES</option>*/}
+                        {/*<option value="SHEEP">SHEEP</option>*/}
+                        {/*<option value="FERRETS">FERRETS</option>*/}
+                        {/*<option value="DONKEY">DONKEY</option>*/}
+                        {/*<option value="SPIDERS">SPIDERS</option>*/}
                     </select>
                     <br/>
 
