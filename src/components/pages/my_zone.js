@@ -3,6 +3,7 @@ import data from "../../data/data";
 import './adopt.css'
 
 
+
 class My_zone extends Component {
     constructor(props) {
         super(props);
@@ -20,6 +21,11 @@ class My_zone extends Component {
         return this.state.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             let {name, age, color, weight, description, category, picture_link,availability} = pet; //destructuring
+
+            function setAvailability() {
+                availability = false;
+            }
+
             if (age === 0) {
                 age = ""
             }
@@ -27,8 +33,8 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            if (availability == true){
-                availability = <button type="button" id="removePet">Remove pet</button>
+            if (availability === true){
+                availability = <button type="button" id="removePet" onClick={setAvailability()}>Remove pet</button>
             }
             else {
                 availability = "Pet adopted"
@@ -51,19 +57,19 @@ class My_zone extends Component {
 
     render() {
         return (
-            <div >
+            <div className="adopt">
 
                 <table id="pets">
                     <tbody>
                     <tr>
-                        <th>CATEGORY</th>
+                        <th width={150}>CATEGORY</th>
                         <th>NAME</th>
                         <th>AGE</th>
                         <th>COLOR</th>
-                        <th>WEIGHT</th>
-                        <th>DESCRIPTION</th>
-                        <th>PICTURE</th>
-                        <th>STATUS</th>
+                        <th width={100}>WEIGHT</th>
+                        <th width={300}>DESCRIPTION</th>
+                        <th width={120}>PICTURE</th>
+                        <th width={160}>STATUS</th>
                     </tr>
                     {this.renderTableData()}
                     </tbody>
@@ -74,5 +80,7 @@ class My_zone extends Component {
         );
     }
 }
+
+
 
 export default My_zone;

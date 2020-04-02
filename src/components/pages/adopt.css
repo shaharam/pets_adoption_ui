@@ -33,3 +33,10 @@
 #title {
     color: white;
 }
+
+#removePet {
+    width: 150px;
+    margin-left: 20px;
+    padding: 5px;
+
+}

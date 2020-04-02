@@ -7,12 +7,13 @@ class About extends Component {
             <div className="container-fluid">
 
                 <h1>
-                    About content
+                    About AppDoption
                 </h1>
 
-                Appdoption is a free ,online searchable database of animals who need homes across the whole world.
-                Any user who signed up can hand over their pet, provide basic information about it, and get contacted
-                by any one who wishes to adopt it.
+                AppDoption is a free, online searchable database of animals who need home across the whole world.
+                Any user who signed up can  provide basic information about it, and get contacted
+                by any one who wishes to adopt it. <br></br>
+                If you are not signed up to AppDoption, you can take a look on our pets and give them what they all want - a home.
                 <br></br><br></br>
 
                 Our main goal is to facilitate the process of adoption by providing better communication and information about the pet.
