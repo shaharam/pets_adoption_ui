@@ -1,13 +1,19 @@
 import React, {Component} from 'react';
 import './adopt.css'
-import data from '../../data/data'
+import axios from "axios";
 
 class Adopt extends Component {
-    constructor(props) {
-        super(props);
-        this.state = data
-        }
+    state = {
+        pets: []
+    };
 
+    getPets() {
+        axios.get(`http://localhost:8080/pas/v1/admin/pets/adoption/pets/get/all`)
+            .then(res => {
+                const pets = res.data;
+                this.setState({ pets });
+            })
+    }
 
     importAll(r) {
         let images = {};
@@ -17,7 +23,7 @@ class Adopt extends Component {
     }
 
     renderTableData() {
-        return this.state.map((pet) => {
+        return this.state.pets.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             let {name, age, color, weight, description, category, picture_link} = pet; //destructuring
             if (age === 0) {
@@ -43,6 +49,7 @@ class Adopt extends Component {
     }
 
     render() {
+        this.getPets();
         return (
 
             <div className="adopt">
