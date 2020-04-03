@@ -29,3 +29,7 @@ button:hover {
     font-weight: bold;
     color: goldenrod;
 }
+
+button:focus {
+    outline:0;
+}

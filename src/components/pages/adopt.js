@@ -8,9 +8,14 @@ class Adopt extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pets: []
+            pets: [],
+            categories: [],
+            value: 'ALL'
         };
+        this.categoryChange = this.categoryChange.bind(this);
+        this.categorySubmit = this.categorySubmit.bind(this);
         this.getAllPets();
+        this.getAllCategories();
     }
 
     getAllPets() {
@@ -19,6 +24,22 @@ class Adopt extends Component {
                 const pets = res.data;
                 this.setState({ pets });
             })
+    }
+
+    getPetByCategory() {
+        axios.get(pets_url + 'category/' + this.state.value)
+            .then(res => {
+                const pets = res.data;
+                this.setState({ pets });
+            })
+    }
+
+    getAllCategories() {
+        axios.get(pets_url + 'categories')
+            .then(res => {
+                const categories = res.data;
+                this.setState({ categories });
+            });
     }
 
     importImgs(r) {
@@ -40,7 +61,7 @@ class Adopt extends Component {
             }
 
             return (
-                <tr key={name}>
+                <tr>
                     <td>{category}</td>
                     <td>{name}</td>
                     <td>{age}</td>
@@ -54,10 +75,36 @@ class Adopt extends Component {
         })
     }
 
+    renderCategories() {
+        const categories = [];
+        for (const value of this.state.categories) {
+            categories.push(<option value={value}>{value}</option>)
+        }
+        return categories
+    }
+
+    categoryChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    categorySubmit(event) {
+        if (this.state.value === 'ALL')
+            this.getAllPets();
+        else
+            this.getPetByCategory();
+        event.preventDefault();
+    }
+
     render() {
         return (
-
             <div className="adopt">
+                <form id="category" onSubmit={this.categorySubmit}>
+                    <select value={this.state.value} onChange={this.categoryChange}>
+                        <option value="ALL">ALL</option>
+                        {this.renderCategories()}
+                    </select>
+                    <button id="filter" type="submit">Filter by Pet</button>
+                </form>
                 <table id="pets">
                     <tbody>
                         <tr>
