@@ -1,22 +1,27 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import './hand_over.css'
+import axios from 'axios';
+
+const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/';
 
 class Hand_over extends Component {
-    state = {
-        categories: []
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: []
+        };
+        this.getAllCategories();
+    }
 
-    getCategories() {
-        axios.get(`http://localhost:8080/pas/v1/admin/pets/adoption/pets/categories`)
+    getAllCategories() {
+        axios.get(pets_url + 'categories')
             .then(res => {
                 const categories = res.data;
                 this.setState({ categories });
-            })
+            });
     }
 
     render() {
-        this.getCategories();
         const categories = [];
         for (const value of this.state.categories) {
             categories.push(<option value={value}>{value}</option>)

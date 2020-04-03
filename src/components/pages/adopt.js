@@ -10,11 +10,10 @@ class Adopt extends Component {
         this.state = {
             pets: []
         };
-        this.getPets();
+        this.getAllPets();
     }
 
-
-    getPets() {
+    getAllPets() {
         axios.get(pets_url + 'get/all')
             .then(res => {
                 const pets = res.data;
@@ -22,7 +21,7 @@ class Adopt extends Component {
             })
     }
 
-    importAll(r) {
+    importImgs(r) {
         let images = {};
         // eslint-disable-next-line array-callback-return
         r.keys().map((item) => { images[item.replace('./', '')] = r(item); });
@@ -31,7 +30,7 @@ class Adopt extends Component {
 
     renderTableData() {
         return this.state.pets.map((pet) => {
-            const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
+            const images = this.importImgs(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             let {name, age, color, weight, description, category, picture_link} = pet; //destructuring
             if (age === 0) {
                 age = ""
