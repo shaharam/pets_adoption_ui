@@ -2,13 +2,20 @@ import React, {Component} from 'react';
 import './adopt.css'
 import axios from "axios";
 
+const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/';
+
 class Adopt extends Component {
-    state = {
-        pets: []
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            pets: []
+        };
+        this.getPets();
+    }
+
 
     getPets() {
-        axios.get(`http://localhost:8080/pas/v1/admin/pets/adoption/pets/get/all`)
+        axios.get(pets_url + 'get/all')
             .then(res => {
                 const pets = res.data;
                 this.setState({ pets });
@@ -49,7 +56,6 @@ class Adopt extends Component {
     }
 
     render() {
-        this.getPets();
         return (
 
             <div className="adopt">
