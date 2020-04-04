@@ -24,9 +24,10 @@ class Sign_up extends Component {
         axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/users/user", data)
             .then(res => {
                 console.log(res.data);
-                console.log(res)
+                alert("Added successfully !")
             }).catch(eror => {
             console.log(eror)
+            alert("Invalid input")
         })
     };
 
