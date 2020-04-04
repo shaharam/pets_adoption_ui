@@ -1,44 +1,77 @@
 import React, {Component} from 'react';
 import './Sign_up.css'
+import axios from 'axios'
 
-class Sign_up extends Component{
+class Sign_up extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            phoneNumber: '',
+            password: ''
+        }
+    }
+
+    postData = (event) => {
+        event.preventDefault();
+        const name = this.state.name;
+        const email = this.state.email;
+        const phoneNumber = this.state.phoneNumber;
+        const password = this.state.password;
+        const data = {name, email, phoneNumber, password};
+        axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/users/user", data)
+            .then(res => {
+                console.log(res.data);
+                console.log(res)
+            }).catch(eror => {
+            console.log(eror)
+        })
+    };
+
+    changeData = (event) => {
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+
+    };
+
     render() {
         return (
             <div className="container-fluid">
                 <h1 id="sign_up">Sign up</h1>
                 <br></br>
+                <form onSubmit={this.postData}>
 
-
-                <form>
-
-                        {/*<label for="fname">Full name</label>*/}
-                        {/*<br></br>*/}
-                        <input type="text" id="fname" name="fname>" placeholder="Name" required/>
-                        <br></br>
-                        {/*<label htmlFor="email">Email</label>*/}
-                        <br></br>
-                        <input type="text" id="email" name="email>" placeholder="Email" required/>
-                        <br></br>
-                        {/*<label htmlFor="password">Password</label>*/}
-                        <br></br>
-                        <input type="password" id="password" name="password>" placeholder="Password" minLength="8" required/>
-                        <br></br>
-                        {/*<label htmlFor="phone">Phone</label>*/}
-                        <br></br>
-                        <input type="text" id="phone" name="phone>" placeholder="Phone" required/>
-                        <br></br><br></br>
-                        <input type="submit" id="submit" value="Sign up"/>
-                        <br></br><br></br>
+                    {/*<label for="fname">Full name</label>*/}
+                    {/*<br></br>*/}
+                    <input type="text" id="name" name="name" placeholder="name" onChange={this.changeData} required/>
+                    <br></br>
+                    {/*<label htmlFor="email">Email</label>*/}
+                    <br></br>
+                    <input type="text" id="email" name="email" placeholder="Email" onChange={this.changeData}
+                           required/>
+                    <br></br>
+                    {/*<label htmlFor="password">Password</label>*/}
+                    <br></br>
+                    <input type="password" id="password" name="password" placeholder="Password" minLength="8"
+                           onChange={this.changeData} required/>
+                    <br></br>
+                    {/*<label htmlFor="phone">Phone</label>*/}
+                    <br></br>
+                    <input type="text" id="phone" name="phoneNumber" placeholder="Phone" onChange={this.changeData}
+                           required/>
+                    <br></br><br></br>
+                    <input type="submit" id="submit" value="Sign up"/>
+                    <br></br><br></br>
 
                 </form>
-
-
-
 
             </div>
         );
     }
-
 }
 
 export default Sign_up;
