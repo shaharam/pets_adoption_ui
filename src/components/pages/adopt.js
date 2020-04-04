@@ -12,8 +12,15 @@ class Adopt extends Component {
             categories: [],
             value: 'ALL'
         };
+
+        //Import pet images
+        this.images = this.importImgs(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
+
+        //Binding for filter functions
         this.categoryChange = this.categoryChange.bind(this);
         this.categorySubmit = this.categorySubmit.bind(this);
+
+        //Calling here in order to display pets data and categories in the first entrance
         this.getAllPets();
         this.getAllCategories();
     }
@@ -27,7 +34,7 @@ class Adopt extends Component {
     }
 
     getPetByCategory() {
-        axios.get(pets_url + 'category/' + this.state.value)
+        axios.get(pets_url + 'category/' + this.state.value)    //Get the relevant category by state.value
             .then(res => {
                 const pets = res.data;
                 this.setState({ pets });
@@ -51,12 +58,11 @@ class Adopt extends Component {
 
     renderTableData() {
         return this.state.pets.map((pet) => {
-            const images = this.importImgs(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             let {name, age, color, weight, description, category, picture_link} = pet; //destructuring
-            if (age === 0) {
+            if (age === 0) {    //Display empty cell instead of 0 when user didn't mentioned age
                 age = ""
             }
-            if (weight === 0.0) {
+            if (weight === 0.0) {   //Display empty cell instead of 0 when user didn't mentioned weight
                 weight = ""
             }
 
@@ -68,7 +74,7 @@ class Adopt extends Component {
                     <td>{color}</td>
                     <td>{weight}</td>
                     <td>{description}</td>
-                    <td><a href={images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
+                    <td><a href={this.images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
                     <td><a href="FIX URL">Adopt Me</a></td>
                 </tr>
             )
@@ -83,7 +89,7 @@ class Adopt extends Component {
         return categories
     }
 
-    categoryChange(event) {
+    categoryChange(event) {     //Value changed when different category chosen
         this.setState({value: event.target.value});
     }
 
