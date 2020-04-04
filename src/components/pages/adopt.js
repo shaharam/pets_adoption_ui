@@ -20,7 +20,7 @@ class Adopt extends Component {
         this.categoryChange = this.categoryChange.bind(this);
         this.categorySubmit = this.categorySubmit.bind(this);
 
-        //Calling here in order to display pets data and categories in the first entrance
+        //Calling the functions here in order to display pets table and categories on the first entrance to the page
         this.getAllPets();
         this.getAllCategories();
     }
@@ -56,9 +56,17 @@ class Adopt extends Component {
         return images;
     }
 
+    adoptMe(pet_id, event) {
+        event.preventDefault();
+        console.log([pet_id]);
+        const adoption = window.open("", "_blank",
+            "width=400,height=400,top=250,left=600,menubar=0,resizable=0,status=0,titlebar=0,toolbar=0" )
+        adoption.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+    }
+
     renderTableData() {
         return this.state.pets.map((pet) => {
-            let {name, age, color, weight, description, category, picture_link} = pet; //destructuring
+            let {id, name, age, color, weight, description, category, picture_link} = pet; //destructuring
             if (age === 0) {    //Display empty cell instead of 0 when user didn't mentioned age
                 age = ""
             }
@@ -75,7 +83,8 @@ class Adopt extends Component {
                     <td>{weight}</td>
                     <td>{description}</td>
                     <td><a href={this.images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
-                    <td><a href="FIX URL">Adopt Me</a></td>
+                    <td><button id="adopt" type="button" onClick={(e) =>
+                        this.adoptMe(id, e)}>Adopt Me!</button></td>
                 </tr>
             )
         })
