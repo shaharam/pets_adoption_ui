@@ -50,7 +50,7 @@ class Sign_up extends Component {
                     <br></br>
                     {/*<label htmlFor="email">Email</label>*/}
                     <br></br>
-                    <input type="text" id="email" name="email" placeholder="Email" onChange={this.changeData}
+                    <input type="email" id="email" name="email" placeholder="Email" onChange={this.changeData}
                            required/>
                     <br></br>
                     {/*<label htmlFor="password">Password</label>*/}
