@@ -25,9 +25,9 @@ class Sign_up extends Component {
             .then(res => {
                 console.log(res.data);
                 alert("Added successfully !")
-            }).catch(eror => {
-            console.log(eror)
-            alert("Invalid input")
+            }).catch(error => {
+            console.log(error)
+            alert(error.response.data.message)
         })
     };
 
@@ -36,7 +36,6 @@ class Sign_up extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-
     };
 
     render() {
@@ -48,7 +47,7 @@ class Sign_up extends Component {
 
                     {/*<label for="fname">Full name</label>*/}
                     {/*<br></br>*/}
-                    <input type="text" id="name" name="name" placeholder="name" onChange={this.changeData} required/>
+                    <input type="text" id="name" name="name" placeholder="Name" onChange={this.changeData} required/>
                     <br></br>
                     {/*<label htmlFor="email">Email</label>*/}
                     <br></br>
