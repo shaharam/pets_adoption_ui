@@ -18,7 +18,7 @@ class About extends Component {
 
                 Our main goal is to facilitate the process of adoption by providing better communication and information about the pet.
                 <br></br><br></br>
-                You are welcome to contact us <a href="Contact_us" target="_blank" id="here">here</a>.
+                Click <a href="Contact_us" id="here">HERE</a> in order to contact us.
 
             </div>
         );
