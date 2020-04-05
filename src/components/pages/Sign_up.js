@@ -13,7 +13,6 @@ class Sign_up extends Component {
             password: ''
         }
     }
-
     postData = (event) => {
         event.preventDefault();
         const name = this.state.name;
@@ -48,7 +47,7 @@ class Sign_up extends Component {
 
                     {/*<label for="fname">Full name</label>*/}
                     {/*<br></br>*/}
-                    <input type="text" id="name" name="name" placeholder="name" onChange={this.changeData} required/>
+                    <input type="text" id="name" name="name" placeholder="Name" onChange={this.changeData} required/>
                     <br></br>
                     {/*<label htmlFor="email">Email</label>*/}
                     <br></br>

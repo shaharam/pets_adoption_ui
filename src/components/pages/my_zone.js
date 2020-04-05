@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import data from "../../data/data";
-import './adopt.css'
+import './adopt.css';
+import axios from 'axios'
 
+
+const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/';
 
 
 class My_zone extends Component {
@@ -20,11 +23,20 @@ class My_zone extends Component {
     renderTableData() {
         return this.state.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
-            let {name, age, color, weight, description, category, picture_link,availability} = pet; //destructuring
+            let {name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
+
+            function removePet(data) {
+
+            }
+
 
             function setAvailability() {
-                availability = false;
+                if (availability)
+                    availability = false;
+                else
+                    availability = true;
             }
+
 
             if (age === 0) {
                 age = ""
@@ -33,8 +45,8 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            if (availability === true){
-                availability = <button type="button" id="removePet" onClick={setAvailability()}>Remove pet</button>
+            if (availability){
+                availability = <button type="button" id="removePet" onClick={setAvailability()}>Set pet as adopted</button>
             }
             else {
                 availability = "Pet adopted"
@@ -50,6 +62,7 @@ class My_zone extends Component {
                     <td>{description}</td>
                     <td><a href={images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
                     <td>{availability}</td>
+                    <td>{removal}</td>
                 </tr>
             )
         })
@@ -69,7 +82,8 @@ class My_zone extends Component {
                         <th width={100}>WEIGHT</th>
                         <th width={300}>DESCRIPTION</th>
                         <th width={120}>PICTURE</th>
-                        <th width={160}>STATUS</th>
+                        <th width={180}>STATUS</th>
+                        <th>Removal</th>
                     </tr>
                     {this.renderTableData()}
                     </tbody>
