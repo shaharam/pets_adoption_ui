@@ -60,7 +60,8 @@ class Hand_over extends Component {
             }).catch(error =>{
                 console.log(error);
                 alert(error.response.data.message)
-        })
+        });
+        document.getElementById("hand_over").reset();   //Reset the form after submit
     };
 
     render() {
@@ -110,7 +111,7 @@ class Hand_over extends Component {
                     </textarea>
                     <br/>
                     <br/>
-                    <input type="submit" id="hand_over" value="Hand Over!"/>
+                    <button type="submit" id="hand_over_submit">Hand Over!</button>
                 </form>
 
             </div>
