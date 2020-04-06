@@ -46,7 +46,8 @@ class My_zone extends Component {
 
     }
 
-     removePet(id) {
+     removePet(id, event) {
+        event.preventDefault();
         axios.delete(pets_url+id);
     }
 
@@ -75,7 +76,7 @@ class My_zone extends Component {
             }
 
             availability = <button type="button" id="removePet" onClick={this.setAvailability(availability)}>Set pet as adopted</button>
-            removal = <button type="button" id = "removePet" onClick={this.removePet(id)}>Remove pet</button>
+            removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>
 
             return (
                 <tr key={name}>
