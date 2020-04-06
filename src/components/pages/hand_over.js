@@ -56,12 +56,12 @@ class Hand_over extends Component {
         axios.post('http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet' , data)
             .then(res =>{
                 console.log(res.data);
-                alert('Added successfully !')
+                alert('Added successfully !');
+                document.getElementById("hand_over").reset();   //Reset the form after submit
             }).catch(error =>{
                 console.log(error);
                 alert(error.response.data.message)
         });
-        document.getElementById("hand_over").reset();   //Reset the form after submit
     };
 
     render() {
