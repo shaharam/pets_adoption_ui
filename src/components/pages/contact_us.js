@@ -38,7 +38,7 @@ class Contact_us extends Component {
                     </textarea>
                     <br/>
                     <br/>
-                    <input type="submit" id="submit" value="Send Message"/>
+                    <button type="submit" id="contact_us_submit">Send Message!</button>
                 </form>
 
             </div>

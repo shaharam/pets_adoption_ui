@@ -18,29 +18,29 @@ import Sign_up from "./components/pages/Sign_up";
 import log_in from "./components/pages/log_in";
 
 class App extends Component {
-  render() {
-    return (
-        <Router>
-        <div className="App">
+    render() {
+        return (
+            <Router>
+                <div className="App">
 
-            <Header />
+                    <Header />
 
-            <Route exact path='/' component={Homepage} />
-            <Route exact path='/Adopt' component={Adopt} />
-            <Route exact path='/Hand_over' component={Hand_over} />
-            <Route exact path='/My_Zone' component={My_zone} />
-            <Route exact path='/About' component={About} />
-            <Route exact path='/Contact_us' component={Contact_us} />
-            <Route exact path='/Sign_up' component={Sign_up} />
-            <Route exact path='/log_in' component={log_in}/>
+                    <Route exact path='/' component={Homepage} />
+                    <Route exact path='/Adopt' component={Adopt} />
+                    <Route exact path='/Hand_over' component={Hand_over} />
+                    <Route exact path='/My_Zone' component={My_zone} />
+                    <Route exact path='/About' component={About} />
+                    <Route exact path='/Contact_us' component={Contact_us} />
+                    <Route exact path='/Sign_up' component={Sign_up} />
+                    <Route exact path='/log_in' component={log_in}/>
 
 
-            <Footer />
+                    <Footer />
 
-        </div>
-        </Router>
-    );
-  }
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default App;

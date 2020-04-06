@@ -23,9 +23,10 @@ class Sign_up extends Component {
         axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/users/user", data)
             .then(res => {
                 console.log(res.data);
-                alert("Added successfully !")
+                alert("Added successfully !");
+                document.getElementById("sign_up_form").reset();   //Reset the form after submit
             }).catch(error => {
-            console.log(error)
+            console.log(error);
             alert(error.response.data.message)
         })
     };
@@ -41,30 +42,25 @@ class Sign_up extends Component {
         return (
             <div className="container-fluid">
                 <h1 id="sign_up">Sign up</h1>
-                <br></br>
-                <form onSubmit={this.postData}>
+                <br/>
+                <form id="sign_up_form" onSubmit={this.postData}>
 
-                    {/*<label for="fname">Full name</label>*/}
-                    {/*<br></br>*/}
                     <input type="text" id="name" name="name" placeholder="Name" onChange={this.changeData} required/>
-                    <br></br>
-                    {/*<label htmlFor="email">Email</label>*/}
-                    <br></br>
+                    <br/>
+                    <br/>
                     <input type="email" id="email" name="email" placeholder="Email" onChange={this.changeData}
                            required/>
-                    <br></br>
-                    {/*<label htmlFor="password">Password</label>*/}
-                    <br></br>
+                    <br/>
+                    <br/>
                     <input type="password" id="password" name="password" placeholder="Password" minLength="8"
                            onChange={this.changeData} required/>
-                    <br></br>
-                    {/*<label htmlFor="phone">Phone</label>*/}
-                    <br></br>
+                    <br/>
+                    <br/>
                     <input type="text" id="phone" name="phoneNumber" placeholder="Phone" onChange={this.changeData}
                            required/>
-                    <br></br><br></br>
-                    <input type="submit" id="submit" value="Sign up"/>
-                    <br></br><br></br>
+                    <br/>
+                    <br/>
+                    <button type="submit" id="submit">Sign up</button>
 
                 </form>
 

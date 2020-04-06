@@ -21,11 +21,13 @@ class log_in extends Component {
         axios.post('http://localhost:8080/pas/v1/admin/pets/adoption/authentication/login', data)
             .then(res => {
                 if(res.data === false){
-                    console.log(res.data)
+                    console.log(res.data + ": logging failed");
                     alert("Email or password incorrect")
                 }else {
-                    console.log(res.data)
-                    alert("logged in successfully !")
+                    localStorage.setItem('userId' ,email);
+                    console.log("logged in successfully : " + localStorage.getItem('userId'));
+                    alert("logged in successfully !");
+                    document.getElementById("log_in_form").reset();   //Reset the form after submit
                 }
             })
     };
@@ -39,24 +41,24 @@ class log_in extends Component {
     };
 
     render() {
+
         return (
             <div className="container-fluid">
                 <h1 id="log_in">Log in</h1>
 
 
-                <form onSubmit={this.postData}>
+                <form id="log_in_form" onSubmit={this.postData}>
 
-                    {/*<label for="fname">Email</label>*/}
-                    <br></br>
+                    <br/>
                     <input type="email" id="email" name="email" placeholder="Email"
                            onChange={this.changeData} required/>
-                    <br></br>
-                    {/*<label htmlFor="password">Password</label>*/}
-                    <br></br>
+                    <br/>
+                    <br/>
                     <input type="password" id="password" name="password" placeholder="Password"
                            onChange={this.changeData} required/>
-                    <br></br><br></br>
-                    <input type="submit" id="submit" value="Log in"/>
+                    <br/>
+                    <br/>
+                    <button type="submit" id="submit">Log in</button>
 
                 </form>
 
