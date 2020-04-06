@@ -51,7 +51,7 @@ class Hand_over extends Component {
         const description = this.state.description;
         const category = this.state.category;
         const picture_link = this.state.picture_link;
-        const userId = 'ido831@gmail.com';
+        const userId = localStorage.getItem('userId');
         const data = {name , age , color , weight , availability, description , category , picture_link ,userId};
         axios.post('http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet' , data)
             .then(res =>{
