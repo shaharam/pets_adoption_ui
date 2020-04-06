@@ -6,7 +6,7 @@ import {render} from "react-dom";
 
 
 const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
-const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/galbt91@gmail.com';
+const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/' +localStorage.getItem('userId');
 
 class My_zone extends Component {
     constructor(props) {

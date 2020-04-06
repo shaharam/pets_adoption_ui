@@ -18,15 +18,9 @@ import Sign_up from "./components/pages/Sign_up";
 import log_in from "./components/pages/log_in";
 
 class App extends Component {
-   state = {
-       isFirstRun : true
-    };
 
     render() {
-        if(this.state.isFirstRun){
-            localStorage.clear();
-            this.state.isFirstRun = false;
-        }
+
         return (
 
             <Router>

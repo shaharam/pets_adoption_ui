@@ -24,9 +24,29 @@ class Header extends Component {
         localStorage.clear();
     }
 
+    isAuthenticated(){
+        return(localStorage.getItem('userId') != null)
+    }
+
+    guidingToHandOver(){
+        let guidePath = '/Hand_over';
+        if(!this.isAuthenticated()){
+            guidePath = '/Log_in' ;
+        }
+        return guidePath;
+    }
+
+    guidingToMyZone(){
+        let guidePath = '/My_zone';
+        if(!this.isAuthenticated()){
+            guidePath = '/Log_in';
+        }
+        return guidePath;
+    }
+
     render() {
 
-        if(localStorage.getItem('userId') != null){
+        if(this.isAuthenticated()){
             this.state.isLoggedIn = true;
         }
         if(this.state.isLoggedIn) {
@@ -47,10 +67,10 @@ class Header extends Component {
                                 <Link to='/Adopt'>Adopt</Link>
                             </li>
                             <li>
-                                <Link to='/Hand_over'>Hand over</Link>
+                                <Link to={this.guidingToHandOver()}>Hand over</Link>
                             </li>
                             <li>
-                                <Link to='/My_zone'>My Zone</Link>
+                                <Link to={this.guidingToMyZone()}>My Zone</Link>
                             </li>
                             <li>
                                 <Link to='/About'>About</Link>
@@ -90,10 +110,10 @@ class Header extends Component {
                                 <Link to='/Adopt'>Adopt</Link>
                             </li>
                             <li>
-                                <Link to='/Hand_over'>Hand over</Link>
+                                <Link to={this.guidingToHandOver()}>Hand over</Link>
                             </li>
                             <li>
-                                <Link to='/My_zone'>My Zone</Link>
+                                <Link to={this.guidingToMyZone()}>My Zone</Link>
                             </li>
                             <li>
                                 <Link to='/About'>About</Link>
