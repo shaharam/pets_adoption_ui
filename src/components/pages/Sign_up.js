@@ -25,7 +25,7 @@ class Sign_up extends Component {
                 console.log(res.data);
                 alert("Added successfully !")
             }).catch(error => {
-            console.log(error)
+            console.log(error);
             alert(error.response.data.message)
         })
     };

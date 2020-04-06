@@ -21,10 +21,11 @@ class log_in extends Component {
         axios.post('http://localhost:8080/pas/v1/admin/pets/adoption/authentication/login', data)
             .then(res => {
                 if(res.data === false){
-                    console.log(res.data)
+                    console.log(res.data + ": logging failed");
                     alert("Email or password incorrect")
                 }else {
-                    console.log(res.data)
+                    localStorage.setItem('userId' ,email);
+                    console.log("logged in successfully :" + " " + localStorage.getItem('userId'));
                     alert("logged in successfully !")
                 }
             })
@@ -39,6 +40,7 @@ class log_in extends Component {
     };
 
     render() {
+
         return (
             <div className="container-fluid">
                 <h1 id="log_in">Log in</h1>
@@ -49,7 +51,7 @@ class log_in extends Component {
                     {/*<label for="fname">Email</label>*/}
                     <br></br>
                     <input type="email" id="email" name="email" placeholder="Email"
-                           onChange={this.changeData} required/>
+                           onChange={this.changeData} required  />
                     <br></br>
                     {/*<label htmlFor="password">Password</label>*/}
                     <br></br>
