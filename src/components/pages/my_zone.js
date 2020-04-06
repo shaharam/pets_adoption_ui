@@ -4,7 +4,7 @@ import './adopt.css';
 import axios from 'axios'
 
 
-const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/';
+const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet';
 
 
 class My_zone extends Component {
@@ -23,26 +23,17 @@ class My_zone extends Component {
     renderTableData() {
         return this.state.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
-            let {name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
+            let {id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
 
-            function removePet(data) {
-
+            function removePet() {
+                axios.delete(pets_url,id);
             }
-
 
             function setAvailability() {
                 if (availability)
-                    availability = false;
+                    availability = false; //axios.put
                 else
                     availability = true;
-            }
-
-
-            if (age === 0) {
-                age = ""
-            }
-            if (weight === 0.0) {
-                weight = ""
             }
 
             if (availability){
@@ -51,6 +42,15 @@ class My_zone extends Component {
             else {
                 availability = "Pet adopted"
             }
+
+            if (age === 0) {
+                age = ""
+            }
+            if (weight === 0.0) {
+                weight = ""
+            }
+
+            removal = <button type="button" id = "removePet" onClick={removePet()}>Remove pet</button>
 
             return (
                 <tr key={name}>
@@ -83,13 +83,12 @@ class My_zone extends Component {
                         <th width={300}>DESCRIPTION</th>
                         <th width={120}>PICTURE</th>
                         <th width={180}>STATUS</th>
-                        <th>Removal</th>
+                        <th>REMOVAL</th>
                     </tr>
                     {this.renderTableData()}
                     </tbody>
                 </table>
             </div>
-
 
         );
     }
