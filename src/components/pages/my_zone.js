@@ -6,21 +6,35 @@ import {render} from "react-dom";
 
 
 const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
-const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/' +localStorage.getItem('userId');
+const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/'+localStorage.getItem('userId');
 
 class My_zone extends Component {
     constructor(props) {
         super(props);
          this.state = {
+             // name: '',
+             // age: '',
+             // weight: ,
+             // availability: '',
+             // description: '',
+             // category: '',
+             // picture_link: '',
              pets: [],
              id: ''};
 
-
         this.getUserPets();
-
     }
-
-
+    //
+    // state = {
+    //     name :'',
+    //     age: null ,
+    //     color:'',
+    //     weight: null ,
+    //     availability:true,
+    //     description:'',
+    //     category: '',
+    //     picture_link:'',
+    // };
 
     getUserPets() {
         axios.get(get_pets)
@@ -30,6 +44,14 @@ class My_zone extends Component {
             })
 
 
+    }
+
+     removePet(id) {
+        axios.delete(pets_url+id);
+    }
+
+     setAvailability(availability) {
+        availability = !availability;
     }
 
 
@@ -43,22 +65,7 @@ class My_zone extends Component {
     renderTableData() {
         return this.state.pets.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
-            let {id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
-
-            function removePet() {
-                axios.delete(pets_url+id);
-            }
-
-            function setAvailability() {
-                availability = !availability;
-            }
-
-            if (availability){
-                availability = <button type="button" id="removePet" onClick={removePet()}>Set pet as adopted</button>
-            }
-            else {
-                availability = "Pet adopted"
-            }
+            let {userId,id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
 
             if (age === 0) {
                 age = ""
@@ -67,7 +74,8 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            removal = <button type="button" id = "removePet" onClick={removePet()}>Remove pet</button>
+            availability = <button type="button" id="removePet" onClick={this.setAvailability(availability)}>Set pet as adopted</button>
+            removal = <button type="button" id = "removePet" onClick={this.removePet(id)}>Remove pet</button>
 
             return (
                 <tr key={name}>
