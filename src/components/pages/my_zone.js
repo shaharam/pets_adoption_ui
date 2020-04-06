@@ -1,17 +1,37 @@
 import React, {Component} from 'react';
-import data from "../../data/data";
+// import data from "../../data/data";
 import './adopt.css';
 import axios from 'axios'
+import {render} from "react-dom";
 
 
-const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet';
-
+const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
+const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/galbt91@gmail.com';
 
 class My_zone extends Component {
     constructor(props) {
         super(props);
-        this.state = data
+         this.state = {
+             pets: [],
+             id: ''};
+
+
+        this.getUserPets();
+
     }
+
+
+
+    getUserPets() {
+        axios.get(get_pets)
+            .then(res => {
+                const pets=res.data;
+                this.setState({pets});
+            })
+
+
+    }
+
 
     importAll(r) {
         let images = {};
@@ -21,23 +41,20 @@ class My_zone extends Component {
     }
 
     renderTableData() {
-        return this.state.map((pet) => {
+        return this.state.pets.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
             let {id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
 
             function removePet() {
-                axios.delete(pets_url,id);
+                axios.delete(pets_url+id);
             }
 
             function setAvailability() {
-                if (availability)
-                    availability = false; //axios.put
-                else
-                    availability = true;
+                availability = !availability;
             }
 
             if (availability){
-                availability = <button type="button" id="removePet" onClick={setAvailability()}>Set pet as adopted</button>
+                availability = <button type="button" id="removePet" onClick={removePet()}>Set pet as adopted</button>
             }
             else {
                 availability = "Pet adopted"
