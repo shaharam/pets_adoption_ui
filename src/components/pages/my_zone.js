@@ -11,16 +11,16 @@ const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pe
 class My_zone extends Component {
     constructor(props) {
         super(props);
-         this.state = {
-             // name: '',
-             // age: '',
-             // weight: ,
-             // availability: '',
-             // description: '',
-             // category: '',
-             // picture_link: '',
-             pets: [],
-             id: ''};
+        this.state = {
+            // name: '',
+            // age: '',
+            // weight: ,
+            // availability: '',
+            // description: '',
+            // category: '',
+            // picture_link: '',
+            pets: [],
+            id: ''};
 
         this.getUserPets();
     }
@@ -46,12 +46,12 @@ class My_zone extends Component {
 
     }
 
-     removePet(id, event) {
+    removePet(id, event) {
         event.preventDefault();
         axios.delete(pets_url+id);
     }
 
-     setAvailability(availability) {
+    setAvailability(availability) {
         availability = !availability;
     }
 
