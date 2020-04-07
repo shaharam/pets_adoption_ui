@@ -26,10 +26,11 @@ class log_in extends Component {
                 }else {
                     localStorage.setItem('userId' ,email);
                     console.log("logged in successfully : " + localStorage.getItem('userId'));
-                    alert("logged in successfully !");
                     document.getElementById("log_in_form").reset();   //Reset the form after submit
                 }
             })
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
     };
 
     changeData = (event) => {

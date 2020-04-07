@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useCallback} from 'react';
 import './header.css'
 import logo from '../../img/logo.png'
 import {
@@ -18,11 +18,15 @@ import Footer from "../footerComponent/footer";
 class Header extends Component {
     state = {
         isLoggedIn: false
+
     };
 
     removeLocalStorage(){
         localStorage.clear();
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
     }
+
 
     isAuthenticated(){
         return(localStorage.getItem('userId') != null)
@@ -43,6 +47,7 @@ class Header extends Component {
         }
         return guidePath;
     }
+
 
     render() {
 
@@ -67,10 +72,10 @@ class Header extends Component {
                                 <Link to='/Adopt'>Adopt</Link>
                             </li>
                             <li>
-                                <Link to={this.guidingToHandOver()}>Hand over</Link>
+                                <Link to='/Hand_over'>Hand over</Link>
                             </li>
                             <li>
-                                <Link to={this.guidingToMyZone()}>My Zone</Link>
+                                <Link to='/My_zone'>My Zone</Link>
                             </li>
                             <li>
                                 <Link to='/About'>About</Link>
@@ -79,7 +84,7 @@ class Header extends Component {
                                 <Link to='/Contact_us'>Contact us</Link>
                             </li>
                             <login>
-                                <Link onClick={this.removeLocalStorage}>Log out</Link>
+                                <Link onClick={this.removeLocalStorage} >Log out</Link>
                             </login>
                             &nbsp;&nbsp;&nbsp;
                             <signup>
@@ -91,6 +96,8 @@ class Header extends Component {
                 </header>
 
             );
+
+
         }
         else{
             return (
@@ -132,11 +139,13 @@ class Header extends Component {
                     </nav>
 
                 </header>
+
             );
 
-
         }
+
     }
+
 }
 
 export default Header;
