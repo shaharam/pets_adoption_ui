@@ -7,25 +7,26 @@ import {render} from "react-dom";
 
 const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
 const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/'+localStorage.getItem('userId');
+const update_pet = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
 
 class My_zone extends Component {
     constructor(props) {
         super(props);
          this.state = {
-             // name: '',
-             // age: '',
-             // weight: ,
-             // availability: '',
-             // description: '',
-             // category: '',
-             // picture_link: '',
+             name: '',
+             age: '',
+             weight: '',
+             availability: '',
+             description: '',
+             category: '',
+             picture_link: '',
              pets: [],
-             id: ''};
-
+             // id: ''
+         };
         this.getUserPets();
     }
-    //
-    // state = {
+
+    //  pet = {
     //     name :'',
     //     age: null ,
     //     color:'',
@@ -42,8 +43,6 @@ class My_zone extends Component {
                 const pets=res.data;
                 this.setState({pets});
             })
-
-
     }
 
      removePet(id, event) {
@@ -51,10 +50,26 @@ class My_zone extends Component {
         axios.delete(pets_url+id);
     }
 
-     setAvailability(availability) {
-        availability = !availability;
-    }
+     setAvailability(id, event) {
+        event.preventDefault();
+        axios.get(pets_url+id)
+            .then(res => {
+               const pet = res.data;
+              // this.setState({pet});
+            });
 
+        const name = this.state.name;
+        const age = this.state.age;
+        // const color = this.state.color;
+        const weight = this.state.weight;
+        const newAvailability = !this.state.availability;
+        const description = this.state.description;
+        const category = this.state.category;
+        const picture_link = this.state.picture_link;
+        const data = {name,age,weight,newAvailability,description,category,picture_link};
+
+        axios.put(update_pet+id, data);
+    }
 
     importAll(r) {
         let images = {};
@@ -66,7 +81,7 @@ class My_zone extends Component {
     renderTableData() {
         return this.state.pets.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
-            let {userId,id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
+            let {id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
 
             if (age === 0) {
                 age = ""
@@ -75,7 +90,12 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            availability = <button type="button" id="removePet" onClick={this.setAvailability(availability)}>Set pet as adopted</button>
+            if (availability) {
+                availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as unavailable</button>
+            }
+            else {
+                availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as available</button>
+            }
             removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>
 
             return (
