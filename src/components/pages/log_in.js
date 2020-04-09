@@ -27,11 +27,18 @@ class log_in extends Component {
                     localStorage.setItem('userId' ,email);
                     console.log("logged in successfully : " + localStorage.getItem('userId'));
                     document.getElementById("log_in_form").reset();   //Reset the form after submit
+                    // eslint-disable-next-line no-restricted-globals
+                    location.reload();
+                    this.openHomePage();
                 }
             })
-        // eslint-disable-next-line no-restricted-globals
-        location.reload();
     };
+
+
+    openHomePage(){
+        window.open('/', '_self');
+    }
+
 
     changeData = (event) => {
         event.preventDefault();
