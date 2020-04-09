@@ -10,7 +10,8 @@ class Adopt extends Component {
         this.state = {
             pets: [],
             categories: [],
-            value: 'ALL'
+            value: 'ALL',  //Category
+            owner: {}
         };
 
         //Import pet images
@@ -58,10 +59,24 @@ class Adopt extends Component {
 
     adoptMe(pet_id, event) {
         event.preventDefault();
-        console.log([pet_id]);
-        const adoption = window.open("", "_blank",
-            "width=400,height=400,top=250,left=600,menubar=0,resizable=0,status=0,titlebar=0,toolbar=0" )
-        adoption.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+        axios.get(pets_url + 'pet/user/' + pet_id)
+            .then(res => {
+                this.setState({ owner: res.data });
+                const ownerDetails = "<div id='ownerDiv'><p id='name'/><p id='phone'/><p id='mail'/></div>";
+
+                const adoption = window.open("", "_blank",
+                    "width=400,height=200,top=250,left=600,menubar=0,resizable=0,status=0,titlebar=0,toolbar=0" );
+
+                adoption.document.write("<body style=\"background-color: gainsboro;\">");
+                adoption.document.write("<h3>Owner's contact details:</h3>");
+                adoption.document.write("<hr>");
+                adoption.document.write(ownerDetails);
+                adoption.document.write("<hr>");
+                adoption.document.getElementById("name").append("Owner Name: " + this.state.owner["name"]);
+                adoption.document.getElementById("phone").append("Phone Number: " + this.state.owner["phoneNumber"]);
+                adoption.document.getElementById("mail").append("Email: " + this.state.owner["email"]);
+                adoption.document.close(); //prevent the infinite loading
+            });
     }
 
     renderTableData() {
