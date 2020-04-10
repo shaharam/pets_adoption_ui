@@ -3,8 +3,6 @@ import './homepage.css'
 
 class Homepage extends Component {
 
-
-
     isAuthenticated(){
         return (localStorage.getItem('userId') != null);
     }

@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-// import data from "../../data/data";
 import './adopt.css';
 import axios from 'axios'
-import {render} from "react-dom";
-
 
 const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
 const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/'+localStorage.getItem('userId');

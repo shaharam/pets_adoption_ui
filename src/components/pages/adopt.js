@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './adopt.css'
 import axios from "axios";
-import log_in from "../pages/log_in";
-import {Link} from "react-router-dom";
 const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/';
 
 class Adopt extends Component {
@@ -82,7 +80,7 @@ class Adopt extends Component {
 
                 adoption.document.open();
                 adoption.document.write("<body style=\"font-family: Comic Sans MS\">");
-                adoption.document.write("<h3 style=\'color: goldenrod'>Owner's contact details:</h3>");
+                adoption.document.write("<h3 style='color: goldenrod'>Owner's contact details:</h3>");
                 adoption.document.write("<hr>");
                 adoption.document.write(ownerDetails);
                 adoption.document.write("<hr>");
@@ -92,8 +90,6 @@ class Adopt extends Component {
                 adoption.document.close(); //prevent the infinite loading
             });
     }
-
-
 
     renderTableData() {
         return this.state.pets.map((pet) => {

@@ -5,9 +5,8 @@ import {
     Route,
 } from "react-router-dom";
 
-// components
+// import components
 import Header from "./components/headerComponent/header";
-import Footer from "./components/footerComponent/footer";
 import Homepage from "./components/pages/homepage";
 import Adopt from "./components/pages/adopt";
 import Hand_over from "./components/pages/hand_over";
@@ -25,9 +24,7 @@ class App extends Component {
 
             <Router>
                 <div className="App">
-
                     <Header />
-
                     <Route exact path='/' component={Homepage} />
                     <Route exact path='/Adopt' component={Adopt} />
                     <Route exact path='/Hand_over' component={Hand_over} />
@@ -36,10 +33,6 @@ class App extends Component {
                     <Route exact path='/Contact_us' component={Contact_us} />
                     <Route exact path='/Sign_up' component={Sign_up} />
                     <Route exact path='/log_in' component={log_in}/>
-
-
-                    <Footer />
-
                 </div>
             </Router>
         );

@@ -1,19 +1,7 @@
-import React, {Component, useCallback} from 'react';
+import React, {Component} from 'react';
 import './header.css'
 import logo from '../../img/logo.png'
-import {
-    BrowserRouter as Router,
-    Link, Route
-} from "react-router-dom";
-import Homepage from "../pages/homepage";
-import Adopt from "../pages/adopt";
-import Hand_over from "../pages/hand_over";
-import My_zone from "../pages/my_zone";
-import About from "../pages/about";
-import Contact_us from "../pages/contact_us";
-import Sign_up from "../pages/Sign_up";
-import log_in from "../pages/log_in";
-import Footer from "../footerComponent/footer";
+import {Link} from "react-router-dom";
 
 class Header extends Component {
     state = {
@@ -46,8 +34,6 @@ class Header extends Component {
         }
         return guidePath;
     }
-
-
 
     render() {
         if(this.isAuthenticated()){
