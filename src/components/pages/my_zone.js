@@ -48,6 +48,8 @@ class My_zone extends Component {
      removePet(id, event) {
         event.preventDefault();
         axios.delete(pets_url+id);
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
     }
 
      setAvailability(id, event) {

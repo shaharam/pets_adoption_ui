@@ -18,15 +18,14 @@ import Footer from "../footerComponent/footer";
 class Header extends Component {
     state = {
         isLoggedIn: false
-
     };
 
     removeLocalStorage(){
-        localStorage.clear();
+        localStorage.removeItem('userId');
         // eslint-disable-next-line no-restricted-globals
         location.reload();
+        window.open('/', '_self');
     }
-
 
     isAuthenticated(){
         return(localStorage.getItem('userId') != null)
@@ -47,6 +46,7 @@ class Header extends Component {
         }
         return guidePath;
     }
+
 
 
     render() {
@@ -84,7 +84,7 @@ class Header extends Component {
                                 <Link to='/Contact_us'>Contact us</Link>
                             </li>
                             <login>
-                                <Link onClick={this.removeLocalStorage} >Log out</Link>
+                                <Link onClick={this.removeLocalStorage} to={'/'} >Log out</Link>
                             </login>
                             &nbsp;&nbsp;&nbsp;
                             <signup>
