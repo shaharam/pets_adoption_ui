@@ -142,6 +142,7 @@ class Adopt extends Component {
     }
 
     render() {
+        sessionStorage.setItem('lastPage' , '/Adopt' );
         return (
             <div className="adopt">
                 <form id="category" onSubmit={this.categorySubmit}>

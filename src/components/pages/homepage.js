@@ -17,6 +17,7 @@ class Homepage extends Component {
         return guidePath;
     }
     render() {
+        sessionStorage.setItem('lastPage' , '/' );
         return (
             <div className="container-fluid">
 

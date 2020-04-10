@@ -34,9 +34,8 @@ class log_in extends Component {
             })
     };
 
-
     openHomePage(){
-        window.open('/', '_self');
+        window.open(sessionStorage.getItem('lastPage'), '_self');
     }
 
 

@@ -14,15 +14,15 @@ class Hand_over extends Component {
     }
 
     state = {
-    name :'',
-    age: null ,
-    color:'',
-    weight: null ,
-    availability:true,
-    description:'',
-    category: '',
-    picture_link:'',
-    userId:'' ,
+        name :'',
+        age: null ,
+        color:'',
+        weight: null ,
+        availability:true,
+        description:'',
+        category: '',
+        picture_link:'',
+        userId:'' ,
     };
 
     getAllCategories() {
@@ -59,8 +59,8 @@ class Hand_over extends Component {
                 alert('Added successfully !');
                 document.getElementById("hand_over").reset();   //Reset the form after submit
             }).catch(error =>{
-                console.log(error);
-                alert(error.response.data.message)
+            console.log(error);
+            alert(error.response.data.message)
         })
     };
 
