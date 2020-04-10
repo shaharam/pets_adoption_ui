@@ -2,6 +2,20 @@ import React, {Component} from 'react';
 import './homepage.css'
 
 class Homepage extends Component {
+
+
+
+    isAuthenticated(){
+        return (localStorage.getItem('userId') != null);
+    }
+
+    guidingToHandOver(){
+        let guidePath = "/Hand_over";
+        if(!this.isAuthenticated()){
+            guidePath = '/Log_in'
+        }
+        return guidePath;
+    }
     render() {
         return (
             <div className="container-fluid">
@@ -14,7 +28,7 @@ class Homepage extends Component {
                 <br/>
                 <form>
                     <button type="submit" formAction="/Adopt">ADOPT A PET</button>
-                    <button type="submit" formAction="/Hand_over">HAND OVER A PET</button>
+                    <button type="submit" formAction={this.guidingToHandOver()}>HAND OVER A PET</button>
                 </form>
             </div>
         );

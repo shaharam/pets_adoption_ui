@@ -13,6 +13,7 @@ class Sign_up extends Component {
             password: ''
         }
     }
+
     postData = (event) => {
         event.preventDefault();
         const name = this.state.name;
@@ -25,6 +26,8 @@ class Sign_up extends Component {
                 console.log(res.data);
                 alert("Added successfully !");
                 document.getElementById("sign_up_form").reset();   //Reset the form after submit
+                window.open('/Log_in', '_self');
+
             }).catch(error => {
             console.log(error);
             alert(error.response.data.message)
