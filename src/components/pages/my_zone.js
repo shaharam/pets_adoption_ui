@@ -21,23 +21,11 @@ class My_zone extends Component {
              category: '',
              picture_link: '',
              pets: [],
-             pet: '',
+             pet: {}
              // id: ''
          };
         this.getUserPets();
     }
-
-     //  state = {
-     //     name :'',
-     //     age: null ,
-     //     color:'',
-     //     weight: null ,
-     //     availability:true,
-     //     description:'',
-     //     category: '',
-     //     picture_link:'',
-     //      pet: []
-     // };
 
     getUserPets() {
         axios.get(get_pets)
@@ -61,19 +49,11 @@ class My_zone extends Component {
             .then(response => {
                 const pet = response.data;
                 this.setState({ pet });
+                this.state.pet["availability"] = !(this.state.pet["availability"]);
+                axios.put(update_pet+id, this.state.pet);
+                // eslint-disable-next-line no-restricted-globals
+                location.reload()
             });
-
-        const name = this.state.name;
-        const age = this.state.age;
-        // const color = this.state.color;
-        const weight = this.state.weight;
-        const newAvailability = !(this.state.availability);
-        const description = this.state.description;
-        const category = this.state.category;
-        const picture_link = this.state.picture_link;
-        const data = {name,age,weight,newAvailability,description,category,picture_link};
-
-        axios.put(update_pet+id, data);
     };
 
     importAll(r) {
@@ -86,7 +66,7 @@ class My_zone extends Component {
     renderTableData() {
         return this.state.pets.map((pet) => {
             const images = this.importAll(require.context('../../img/animals', false, /\.(png|jpe?g|svg)$/));
-            let {id,name, age, color, weight, description, category, picture_link,availability,removal} = pet; //destructuring
+            let {id,name, age, color, weight, description, category, picture_link,availability} = pet; //destructuring
 
             if (age === 0) {
                 age = ""
@@ -95,13 +75,14 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            if (this.state.availability === true) {
+            if (availability === true) {
                 availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as unavailable</button>
             }
             else {
                 availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as available</button>
             }
-            removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>
+
+            const removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>
 
             return (
                 <tr key={name}>
