@@ -21,21 +21,23 @@ class My_zone extends Component {
              category: '',
              picture_link: '',
              pets: [],
+             pet: '',
              // id: ''
          };
         this.getUserPets();
     }
 
-    //  pet = {
-    //     name :'',
-    //     age: null ,
-    //     color:'',
-    //     weight: null ,
-    //     availability:true,
-    //     description:'',
-    //     category: '',
-    //     picture_link:'',
-    // };
+     //  state = {
+     //     name :'',
+     //     age: null ,
+     //     color:'',
+     //     weight: null ,
+     //     availability:true,
+     //     description:'',
+     //     category: '',
+     //     picture_link:'',
+     //      pet: []
+     // };
 
     getUserPets() {
         axios.get(get_pets)
@@ -52,26 +54,27 @@ class My_zone extends Component {
         location.reload();
     }
 
+
      setAvailability(id, event) {
         event.preventDefault();
         axios.get(pets_url+id)
-            .then(res => {
-               const pet = res.data;
-              // this.setState({pet});
+            .then(response => {
+                const pet = response.data;
+                this.setState({ pet });
             });
 
         const name = this.state.name;
         const age = this.state.age;
         // const color = this.state.color;
         const weight = this.state.weight;
-        const newAvailability = !this.state.availability;
+        const newAvailability = !(this.state.availability);
         const description = this.state.description;
         const category = this.state.category;
         const picture_link = this.state.picture_link;
         const data = {name,age,weight,newAvailability,description,category,picture_link};
 
         axios.put(update_pet+id, data);
-    }
+    };
 
     importAll(r) {
         let images = {};
@@ -92,7 +95,7 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            if (availability) {
+            if (this.state.availability === true) {
                 availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as unavailable</button>
             }
             else {
@@ -141,7 +144,5 @@ class My_zone extends Component {
         );
     }
 }
-
-
 
 export default My_zone;
