@@ -50,7 +50,6 @@ class Header extends Component {
 
 
     render() {
-
         if(this.isAuthenticated()){
             this.state.isLoggedIn = true;
         }

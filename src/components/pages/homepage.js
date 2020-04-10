@@ -34,7 +34,7 @@ class Homepage extends Component {
                 </h1>
                 <br/>
                 <form>
-                    <button type="submit" formAction={this.guidingToAdopt()}>ADOPT A PET</button>
+                    <button type="submit" formAction='/Adopt'>ADOPT A PET</button>
                     <button type="submit" formAction={this.guidingToHandOver()}>HAND OVER A PET</button>
                 </form>
             </div>
