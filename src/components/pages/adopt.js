@@ -81,8 +81,8 @@ class Adopt extends Component {
                     "width=400,height=200,top=250,left=600,menubar=0,resizable=0,status=0,titlebar=0,toolbar=0" );
 
                 adoption.document.open();
-                adoption.document.write("<body style=\"background-color: gainsboro;\">");
-                adoption.document.write("<h3>Owner's contact details:</h3>");
+                adoption.document.write("<body style=\"font-family: Comic Sans MS\">");
+                adoption.document.write("<h3 style=\'color: goldenrod'>Owner's contact details:</h3>");
                 adoption.document.write("<hr>");
                 adoption.document.write(ownerDetails);
                 adoption.document.write("<hr>");
