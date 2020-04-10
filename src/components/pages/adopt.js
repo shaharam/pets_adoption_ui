@@ -91,6 +91,19 @@ class Adopt extends Component {
             });
     }
 
+    extractFilename(path) {
+        if (path.substr(0, 12) === "C:\\fakepath\\")
+            return path.substr(12); // modern browser
+        let x;
+        x = path.lastIndexOf('/');
+        if (x >= 0) // Unix-based path
+            return path.substr(x+1);
+        x = path.lastIndexOf('\\');
+        if (x >= 0) // Windows-based path
+            return path.substr(x+1);
+        return path; // just the file name
+    }
+
     renderTableData() {
         return this.state.pets.map((pet) => {
             let {id, name, age, color, weight, description, category, picture_link} = pet; //destructuring
@@ -100,6 +113,7 @@ class Adopt extends Component {
             if (weight === 0.0) {   //Display empty cell instead of 0 when user didn't mentioned weight
                 weight = ""
             }
+            const new_picture_link = this.extractFilename(picture_link);
 
             return (
                 <tr>
@@ -109,8 +123,8 @@ class Adopt extends Component {
                     <td>{color}</td>
                     <td>{weight}</td>
                     <td>{description}</td>
-                    <td><a href={this.images[picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
-                    <td><button id="adopt" type="button" onClick={(e) =>
+                    <td><a href={this.images[new_picture_link]} target="_blank" rel="noopener noreferrer">See Me!</a></td>
+                    <td><button style={{width: "100px"}} id="adopt" type="button" onClick={(e) =>
                         this.adoptMe(id, e)}>Adopt Me!</button></td>
                 </tr>
             )

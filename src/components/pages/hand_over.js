@@ -35,7 +35,6 @@ class Hand_over extends Component {
 
     changeData = (event) => {
         event.preventDefault();
-        this.loadFile(event);
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -64,11 +63,6 @@ class Hand_over extends Component {
             alert(error.response.data.message)
         })
     };
-
-    loadFile(event) {
-        const image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    }
 
     render() {
         const categories = [];
@@ -108,9 +102,10 @@ class Hand_over extends Component {
                     <br/>
 
                     <br/>
-                    <input type="file" style={{display: "none"}} id="picture" name="picture_link" onChange={this.changeData} accept="image/*" required/>
-                    <p><label htmlFor="picture" style={{cursor: "pointer", fontSize: "20px"}}>Upload Image</label>&nbsp;<img id="output" width="100" /></p>
+                    <input type="file" id="picture" name="picture_link" onChange={this.changeData} accept="image/*" required/>
+                    <br/>
 
+                    <br/>
                     <textarea id="description" name="description" placeholder='Description' onChange={this.changeData} rows="3" cols="50" maxLength="100"
                               required>
                     </textarea>
