@@ -15,9 +15,8 @@ class Homepage extends Component {
         return guidePath;
     }
 
-    guidingToAdopt(){
-        sessionStorage.setItem('lastPage' ,'/Adopt' );
-        return '/Adopt';
+    updateLastPage(){
+        sessionStorage.setItem('lastPage' , '/Hand_over');
     }
 
     render() {
@@ -33,7 +32,7 @@ class Homepage extends Component {
                 <br/>
                 <form>
                     <button type="submit" formAction='/Adopt'>ADOPT A PET</button>
-                    <button type="submit" formAction={this.guidingToHandOver()}>HAND OVER A PET</button>
+                    <button type="submit" formAction={this.guidingToHandOver()} onClick={this.updateLastPage}>HAND OVER A PET</button>
                 </form>
             </div>
         );
