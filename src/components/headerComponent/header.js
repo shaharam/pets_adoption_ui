@@ -32,7 +32,20 @@ class Header extends Component {
         if(!this.isAuthenticated()){
             guidePath = '/Log_in';
         }
+
         return guidePath;
+    }
+
+    updateLastPageToHandOver(){
+        sessionStorage.setItem('lastPage' , '/Hand_over');
+    }
+
+    updateLastPageToMyZone(){
+        sessionStorage.setItem('lastPage' , '/My_zone');
+    }
+
+    updateLastPageToHome(){
+        sessionStorage.setItem('lastPage' , '/');
     }
 
     render() {
@@ -102,19 +115,19 @@ class Header extends Component {
                                 <Link to='/Adopt'>Adopt</Link>
                             </li>
                             <li>
-                                <Link to={this.guidingToHandOver()}>Hand over</Link>
+                                <Link to={this.guidingToHandOver()} onClick={this.updateLastPageToHandOver}>Hand over</Link>
                             </li>
                             <li>
-                                <Link to={this.guidingToMyZone()}>My Zone</Link>
+                                <Link to={this.guidingToMyZone()} onClick={this.updateLastPageToMyZone}>My Zone</Link>
                             </li>
                             <li>
-                                <Link to='/About'>About</Link>
+                                <Link to='/About' onClick={this.updateLastPageToHome}>About</Link>
                             </li>
                             <li className="last">
-                                <Link to='/Contact_us'>Contact us</Link>
+                                <Link to='/Contact_us' onClick={this.updateLastPageToHome}>Contact us</Link>
                             </li>
                             <login>
-                                <Link to='/Log_in'>Log in</Link>
+                                <Link to='/Log_in' onClick={this.updateLastPageToHome}>Log in</Link>
                             </login>
                             &nbsp;&nbsp;&nbsp;
                             <signup>
