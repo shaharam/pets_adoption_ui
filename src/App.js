@@ -15,6 +15,7 @@ import About from "./components/pages/about";
 import Contact_us from "./components/pages/contact_us";
 import Sign_up from "./components/pages/Sign_up";
 import log_in from "./components/pages/log_in";
+import forgot_password from "./components/pages/forgot_password";
 
 class App extends Component {
 
@@ -33,6 +34,7 @@ class App extends Component {
                     <Route exact path='/Contact_us' component={Contact_us} />
                     <Route exact path='/Sign_up' component={Sign_up} />
                     <Route exact path='/log_in' component={log_in}/>
+                    <Route exact path='/forgot_password' component={forgot_password} />
                 </div>
             </Router>
         );

@@ -65,6 +65,10 @@ class log_in extends Component {
                            onChange={this.changeData} required/>
                     <br/>
                     <br/>
+                    <a href="forgot_password" id="here"> Forgot password ? </a>
+                    <br>
+                    </br>
+                    <br/>
                     <button type="submit" id="submit">Log in</button>
 
                 </form>
