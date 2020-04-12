@@ -10,7 +10,8 @@ class Sign_up extends Component {
             name: '',
             email: '',
             phoneNumber: '',
-            password: ''
+            password: '',
+            validation_question:''
         }
     }
 
@@ -20,7 +21,8 @@ class Sign_up extends Component {
         const email = this.state.email;
         const phoneNumber = this.state.phoneNumber;
         const password = this.state.password;
-        const data = {name, email, phoneNumber, password};
+        const validationQuestion = this.state.validation_question;
+        const data = {name, email, phoneNumber, password , validationQuestion};
         axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/users/user", data)
             .then(res => {
                 console.log(res.data);
@@ -60,6 +62,10 @@ class Sign_up extends Component {
                     <br/>
                     <br/>
                     <input type="text" id="phone" name="phoneNumber" placeholder="Phone" onChange={this.changeData}
+                           required/>
+                    <br/>
+                    <br/>
+                    <input type="text" id="validation_question" name="validation_question" placeholder="What's the last 4 digits of your id ?"  minLength="4" maxLength="4" onChange={this.changeData}
                            required/>
                     <br/>
                     <br/>
