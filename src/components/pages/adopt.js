@@ -60,35 +60,37 @@ class Adopt extends Component {
         return images;
     }
 
-    openLogeInPage(){
+    openLogInPage(){
         window.open('/Log_in', '_self');
     }
 
     adoptMe(pet_id, event) {
+        event.preventDefault();
         if(!this.isAuthenticated()){
-               this.openLogeInPage();
+               this.openLogInPage();
         }
 
-        event.preventDefault();
-        axios.get(pets_url + 'pet/user/' + pet_id)
-            .then(res => {
-                this.setState({ owner: res.data });
-                const ownerDetails = "<div id='ownerDiv'><p id='name'/><p id='phone'/><p id='mail'/></div>";
+        else {
+            axios.get(pets_url + 'pet/user/' + pet_id)
+                .then(res => {
+                    this.setState({owner: res.data});
+                    const ownerDetails = "<div id='ownerDiv'><p id='name'/><p id='phone'/><p id='mail'/></div>";
 
-                const adoption = window.open("", "_blank",
-                    "width=400,height=200,top=250,left=600,menubar=0,resizable=0,status=0,titlebar=0,toolbar=0" );
+                    const adoption = window.open("", "_blank",
+                        "width=400,height=200,top=250,left=600,menubar=0,resizable=0,status=0,titlebar=0,toolbar=0");
 
-                adoption.document.open();
-                adoption.document.write("<body style=\"font-family: Comic Sans MS,serif\">");
-                adoption.document.write("<h3 style='color: goldenrod'>Owner's contact details:</h3>");
-                adoption.document.write("<hr>");
-                adoption.document.write(ownerDetails);
-                adoption.document.write("<hr>");
-                adoption.document.getElementById("name").append("Owner Name: " + this.state.owner["name"]);
-                adoption.document.getElementById("phone").append("Phone Number: " + this.state.owner["phoneNumber"]);
-                adoption.document.getElementById("mail").append("Email: " + this.state.owner["email"]);
-                adoption.document.close(); //prevent the infinite loading
-            });
+                    adoption.document.open();
+                    adoption.document.write("<body style=\"font-family: Comic Sans MS,serif\">");
+                    adoption.document.write("<h3 style='color: goldenrod'>Owner's Contact Details:</h3>");
+                    adoption.document.write("<hr>");
+                    adoption.document.write(ownerDetails);
+                    adoption.document.write("<hr>");
+                    adoption.document.getElementById("name").append("Owner Name: " + this.state.owner["name"]);
+                    adoption.document.getElementById("phone").append("Phone Number: " + this.state.owner["phoneNumber"]);
+                    adoption.document.getElementById("mail").append("Email: " + this.state.owner["email"]);
+                    adoption.document.close(); //prevent the infinite loading
+                });
+        }
     }
 
     extractFilename(path) {
