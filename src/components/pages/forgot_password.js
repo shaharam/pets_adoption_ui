@@ -10,7 +10,8 @@ class forgot_password extends Component {
             user_name: '',
             validation_question: '',
             new_password: ''
-        }
+        };
+
     }
 
     postData = (event) => {
@@ -31,6 +32,8 @@ class forgot_password extends Component {
         })
     };
 
+
+
     changeData = (event) => {
         event.preventDefault();
         this.setState({
@@ -48,7 +51,7 @@ class forgot_password extends Component {
                     <input type="email" id="name" name="user_name" placeholder="User name" onChange={this.changeData} required/>
                     <br/>
                     <br/>
-                    <input type="text" id="email" name="validation_question" placeholder="What's the last 4 digits of your id ?" onChange={this.changeData}
+                    <input  type="text" id="question" name="validation_question" placeholder="What's the last 4 digits of your id ?" onChange={this.changeData}
                            required/>
                     <br/>
                     <br/>

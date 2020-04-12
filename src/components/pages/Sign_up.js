@@ -10,19 +10,26 @@ class Sign_up extends Component {
             name: '',
             email: '',
             phoneNumber: '',
-            password: '',
+            password1: '',
+            password2:'',
             validation_question:''
-        }
+        };
+        this.inputFocus =React.createRef();
     }
 
     postData = (event) => {
         event.preventDefault();
+        const password = this.state.password1;
+         if(password !== this.state.password2 ){
+        alert('The password and confirmation password do not match');
+        this.inputFocus.current.focus();
+        return;
+    }
         const name = this.state.name;
         const email = this.state.email;
         const phoneNumber = this.state.phoneNumber;
-        const password = this.state.password;
         const validationQuestion = this.state.validation_question;
-        const data = {name, email, phoneNumber, password , validationQuestion};
+        const data = {name, email, phoneNumber, password, validationQuestion};
         axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/users/user", data)
             .then(res => {
                 console.log(res.data);
@@ -57,7 +64,11 @@ class Sign_up extends Component {
                            required/>
                     <br/>
                     <br/>
-                    <input type="password" id="password" name="password" placeholder="Password" minLength="8"
+                    <input type="password" id="password1" name="password1" placeholder="Password" minLength="8"
+                           onChange={this.changeData} required/>
+                    <br/>
+                    <br/>
+                    <input ref={this.inputFocus} type="password" id="password2" name="password2" placeholder="Confirm password" minLength="8"
                            onChange={this.changeData} required/>
                     <br/>
                     <br/>
