@@ -1,7 +1,20 @@
 import React, {Component} from 'react';
-import "./contact_us.css"
+import "./contact_us.css";
+import emailjs from 'emailjs-com';
+
 
 class Contact_us extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+
+        };
+    }
     render() {
         return (
             <div className="container-fluid">
@@ -34,15 +47,19 @@ class Contact_us extends Component {
                     </select>
                     <br/>
                     <br/>
-                    <textarea id="message" name="message" placeholder='Message' rows="5" cols="50" maxLength="150" required>
+                    <textarea id="message" name="message" placeholder='Message' rows="5" cols="50" maxLength="150"  onChange={this.handleChange} required>
                     </textarea>
                     <br/>
                     <br/>
-                    <button type="submit" id="contact_us_submit">Send Message!</button>
+                    <button type="submit" id="contact_us_submit" onClick={this.handleSubmit}>Send Message!</button>
                 </form>
 
             </div>
         );
+    }
+
+    handleChange(event) {
+        this.setState({})
     }
 }
 

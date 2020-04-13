@@ -24,7 +24,7 @@ class My_zone extends Component {
         this.getUserPets();
     }
 
-    getUserPets() {
+    getUserPets() { //Return all pets assigned to the user
         axios.get(get_pets)
             .then(res => {
                 const pets=res.data;
@@ -32,15 +32,19 @@ class My_zone extends Component {
             })
     }
 
-     removePet(id, event) {
+     removePet(id, event) { //Remove a pet from the database
         event.preventDefault();
-        axios.delete(pets_url+id);
-        // eslint-disable-next-line no-restricted-globals
-        location.reload();
+         // eslint-disable-next-line no-restricted-globals
+        var result = confirm("Are you sure you want to remove this pet?");
+        if (result) {
+            axios.delete(pets_url + id);
+            // eslint-disable-next-line no-restricted-globals
+            location.reload();
+        }
     }
 
 
-     setAvailability(id, event) {
+     setAvailability(id, event) { //Change the availability of a pet (TRUE/FALSE)
         event.preventDefault();
         axios.get(pets_url+id)
             .then(response => {
@@ -72,16 +76,17 @@ class My_zone extends Component {
                 weight = ""
             }
 
-            if (availability === true) {
+            if (availability === true) { //Availability button (Available/Unavailable)
                 availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as unavailable</button>
             }
             else {
                 availability = <button type="button" id="removePet" onClick={(e) => this.setAvailability(id, e)}>Set as available</button>
             }
 
+            //Remove button
             const removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>
 
-            return (
+            return ( //The data represented in the table
                 <tr key={name}>
                     <td>{category}</td>
                     <td>{name}</td>
