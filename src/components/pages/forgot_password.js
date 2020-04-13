@@ -17,13 +17,13 @@ class forgot_password extends Component {
     postData = (event) => {
        event.preventDefault();
         const userName = this.state.user_name;
-        const validationQuestion = this.state. validation_question;
+        const validationQuestion = this.state.validation_question;
         const newPassword = this.state.new_password;
         const data = {newPassword ,validationQuestion};
         axios.put("http://localhost:8080/pas/v1/admin/pets/adoption/users/user/password/"+userName, data)
             .then(res => {
                 console.log(res.data);
-                alert("Password Updated successfully!")
+                alert("Password Updated successfully!");
                 document.getElementById("forgot_password_form").reset();   //Reset the form after submit
                 window.open('/Log_in', '_self');
             }).catch(error => {
@@ -48,7 +48,7 @@ class forgot_password extends Component {
                 <br/>
                 <form id="forgot_password_form" onSubmit={this.postData}>
 
-                    <input type="email" id="name" name="user_name" placeholder="User name" onChange={this.changeData} required/>
+                    <input type="email" id="name" name="user_name" placeholder="Email Address" onChange={this.changeData} required/>
                     <br/>
                     <br/>
                     <input  type="text" id="question" name="validation_question" placeholder="What's the last 4 digits of your id ?" onChange={this.changeData}

@@ -57,10 +57,10 @@ class Sign_up extends Component {
                 <br/>
                 <form id="sign_up_form" onSubmit={this.postData}>
 
-                    <input type="text" id="name" name="name" placeholder="Name" onChange={this.changeData} required/>
+                    <input type="text" id="name" name="name" placeholder="Full Name" onChange={this.changeData} required/>
                     <br/>
                     <br/>
-                    <input type="email" id="email" name="email" placeholder="Email" onChange={this.changeData}
+                    <input type="email" id="email" name="email" placeholder="Email Address" onChange={this.changeData}
                            required/>
                     <br/>
                     <br/>
