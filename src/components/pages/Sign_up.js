@@ -21,7 +21,7 @@ class Sign_up extends Component {
         event.preventDefault();
         const password = this.state.password1;
          if(password !== this.state.password2 ){
-        alert('The password and confirmation password do not match');
+        alert('The password and confirmation password dont match');
         this.inputFocus.current.focus();
         return;
     }
