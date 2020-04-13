@@ -14,6 +14,7 @@ class Hand_over extends Component {
     }
 
     state = {
+        file:null,
         name :'',
         age: null ,
         color:'',
@@ -43,6 +44,9 @@ class Hand_over extends Component {
 
     postData = (event)=>{
         event.preventDefault();
+        const formData = new FormData();
+        formData.append('imageFile' , this.state.file , this.state.file.name);
+        this.state.picture_link = this.state.file.name;
         const name = this.state.name;
         const age = this.state.age;
         const color = this.state.color;
@@ -61,7 +65,16 @@ class Hand_over extends Component {
             }).catch(error =>{
             console.log(error);
             alert(error.response.data.message)
-        })
+        });
+        axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/uploadImage" , formData )
+            .then(res => {
+
+            })
+    };
+    
+    uploadImage = (event) =>{
+        event.preventDefault();
+        this.state.file = event.target.files[0];
     };
 
     render() {
@@ -102,7 +115,7 @@ class Hand_over extends Component {
                     <br/>
 
                     <br/>
-                    <input type="file" id="picture" name="picture_link" onChange={this.changeData} accept="image/*" required/>
+                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage}/>
                     <br/>
 
                     <br/>
