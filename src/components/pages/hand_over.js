@@ -67,9 +67,7 @@ class Hand_over extends Component {
             alert(error.response.data.message)
         });
         axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/uploadImage" , formData )
-            .then(res => {
-
-            })
+            .then()
     };
     
     uploadImage = (event) =>{
@@ -115,7 +113,7 @@ class Hand_over extends Component {
                     <br/>
 
                     <br/>
-                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage}/>
+                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage} accept="image/*" required/>
                     <br/>
 
                     <br/>
