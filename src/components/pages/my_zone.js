@@ -4,7 +4,6 @@ import axios from 'axios'
 
 const pets_url = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
 const get_pets = 'http://localhost:8080/pas/v1/admin/pets/adoption/users/user/pets/'+localStorage.getItem('userId');
-const update_pet = 'http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/';
 
 class My_zone extends Component {
     constructor(props) {
@@ -35,9 +34,9 @@ class My_zone extends Component {
      removePet(id, event) { //Remove a pet from the database
         event.preventDefault();
          // eslint-disable-next-line no-restricted-globals
-        var result = confirm("Are you sure you want to remove this pet?");
+        const result = confirm("Are you sure you want to remove this pet?");
         if (result) {
-            axios.delete(pets_url + id);
+            axios.delete(pets_url + id).then();
             // eslint-disable-next-line no-restricted-globals
             location.reload();
         }
@@ -51,7 +50,7 @@ class My_zone extends Component {
                 const pet = response.data;
                 this.setState({ pet });
                 this.state.pet["availability"] = !(this.state.pet["availability"]);
-                axios.put(update_pet+id, this.state.pet);
+                axios.put(pets_url + id, this.state.pet).then();
                 // eslint-disable-next-line no-restricted-globals
                 location.reload()
             });
@@ -84,7 +83,7 @@ class My_zone extends Component {
             }
 
             //Remove button
-            const removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>
+            const removal = <button type="button" id = "removePet" onClick={(e) => this.removePet(id, e)}>Remove pet</button>;
 
             return ( //The data represented in the table
                 <tr key={name}>
