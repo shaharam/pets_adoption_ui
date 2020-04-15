@@ -84,10 +84,6 @@ class Header extends Component {
                             <login>
                                 <Link onClick={this.removeLocalStorage} to={'/'} >Log out</Link>
                             </login>
-                            &nbsp;&nbsp;&nbsp;
-                            <signup>
-                                <Link to='/Sign_up'>Join us</Link>
-                            </signup>
                         </ul>
                     </nav>
 
