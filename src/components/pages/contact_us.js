@@ -14,7 +14,40 @@ class Contact_us extends Component {
             message: ''
 
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        (function(){
+            emailjs.init("user_AJe7tcxvzzyKxE0mkRqcS");
+        })()
     }
+
+    handleChange(event) {
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = (event) =>{
+        event.preventDefault();
+        const templateId = 'template_3NduILLk';
+        this.sendFeedback(templateId, {message_html: this.state.message, from_name: this.state.email , subject: this.state.subject , reply_to:'petsAppdoption@gmail.com'})
+    };
+
+    sendFeedback (templateId, variables) {
+
+       emailjs.send(
+            'gmail', templateId,
+            variables
+        ).then(res => {
+            console.log('Email successfully sent!')
+            alert('The message sent successfully !')
+            document.getElementById("contact").reset();
+        })
+            // Handle errors here however you like, or use a React error boundary
+            .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+    }
+
     render() {
         return (
             <div className="container-fluid">
@@ -29,15 +62,15 @@ class Contact_us extends Component {
                     Send us a message and we'll respond as soon as possible.
                 </h6>
 
-                <form id="contact">
+                <form id="contact" onSubmit={this.handleSubmit}>
                     <br/>
-                    <input type="text" id="name" name="name" placeholder='Name' required/>
-                    <br/>
-                    <br/>
-                    <input type="email" id="email" name="email" placeholder='Email' required/>
+                    <input type="text" id="name" name="name" placeholder='Name' onChange={this.handleChange} required/>
                     <br/>
                     <br/>
-                    <select id="subject" name="subject" form="contact" required>
+                    <input type="email" id="email" name="email" placeholder='Email' onChange={this.handleChange} required/>
+                    <br/>
+                    <br/>
+                    <select id="subject" name="subject" form="contact" onChange={this.handleChange} required>
                         <option value="" disabled selected>Select your subject</option>
                         <option value="Adoption">Adoption</option>
                         <option value="Hand_over">Hand over</option>
@@ -51,16 +84,14 @@ class Contact_us extends Component {
                     </textarea>
                     <br/>
                     <br/>
-                    <button type="submit" id="contact_us_submit" onClick={this.handleSubmit}>Send Message!</button>
+                    <button type="submit" id="contact_us_submit" >Send Message!</button>
                 </form>
 
             </div>
         );
     }
 
-    handleChange(event) {
-        this.setState({})
-    }
+
 }
 
 export default Contact_us;
