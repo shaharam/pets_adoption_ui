@@ -72,7 +72,13 @@ class Hand_over extends Component {
     
     uploadImage = (event) =>{
         event.preventDefault();
-        this.state.file = event.target.files[0];
+        if (event.target.files[0].name.endsWith("jpg")) {
+            this.state.file = event.target.files[0];
+        }
+        else {
+            alert("Please upload an image in jpg format");
+            event.target.value = null;
+        }
     };
 
     render() {
@@ -113,7 +119,7 @@ class Hand_over extends Component {
                     <br/>
 
                     <br/>
-                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage} accept="image/*" required/>
+                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage} accept=".jpg" required/>
                     <br/>
 
                     <br/>
