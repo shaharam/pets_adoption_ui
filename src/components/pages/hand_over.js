@@ -69,15 +69,18 @@ class Hand_over extends Component {
         axios.post("http://localhost:8080/pas/v1/admin/pets/adoption/pets/pet/uploadImage" , formData )
             .then()
     };
-    
+
     uploadImage = (event) =>{
         event.preventDefault();
-        if (event.target.files[0].name.endsWith("jpg")) {
-            this.state.file = event.target.files[0];
-        }
-        else {
-            alert("Please upload an image in jpg format");
-            event.target.value = null;
+        if (event.target.files[0]) {
+            const img_name = event.target.files[0].name;
+            if (img_name.endsWith("jpg") || img_name.endsWith("jpeg")) {
+                this.state.file = event.target.files[0];
+            }
+            else {
+                alert("Please upload an image in jpg/jpeg format");
+                event.target.value = null;
+            }
         }
     };
 
@@ -119,7 +122,7 @@ class Hand_over extends Component {
                     <br/>
 
                     <br/>
-                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage} accept=".jpg" required/>
+                    <input type="file" id="file-id" name="file_name" onChange={this.uploadImage} accept=".jpg, .jpeg" required/>
                     <br/>
 
                     <br/>
