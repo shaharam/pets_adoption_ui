@@ -12,8 +12,8 @@ class Contact_us extends Component {
             email: '',
             subject: '',
             message: ''
-
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         (function(){
@@ -31,21 +31,20 @@ class Contact_us extends Component {
     handleSubmit = (event) =>{
         event.preventDefault();
         const templateId = 'template_3NduILLk';
-        this.sendFeedback(templateId, {message_html: this.state.message, from_name: this.state.email , subject: this.state.subject , reply_to:'petsAppdoption@gmail.com'})
+        this.sendFeedback(templateId, {message_html: this.state.message, from_name: this.state.email,
+            subject: this.state.subject, reply_to:'petsAppdoption@gmail.com'})
     };
 
     sendFeedback (templateId, variables) {
-
        emailjs.send(
             'gmail', templateId,
             variables
-        ).then(res => {
-            console.log('Email successfully sent!')
-            alert('The message sent successfully !')
+        ).then(() => {
+            console.log('Email successfully sent!');
+            alert('The message sent successfully !');
             document.getElementById("contact").reset();
         })
-            // Handle errors here however you like, or use a React error boundary
-            .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+            .catch(err => console.error('The message was not sent: ', err))
     }
 
     render() {
@@ -67,7 +66,8 @@ class Contact_us extends Component {
                     <input type="text" id="name" name="name" placeholder='Name' onChange={this.handleChange} required/>
                     <br/>
                     <br/>
-                    <input type="email" id="email" name="email" placeholder='Email' onChange={this.handleChange} required/>
+                    <input type="email" id="email" name="email" placeholder='Email'
+                           onChange={this.handleChange} required/>
                     <br/>
                     <br/>
                     <select id="subject" name="subject" form="contact" onChange={this.handleChange} required>
@@ -80,7 +80,8 @@ class Contact_us extends Component {
                     </select>
                     <br/>
                     <br/>
-                    <textarea id="message" name="message" placeholder='Message' rows="5" cols="50" maxLength="150"  onChange={this.handleChange} required>
+                    <textarea id="message" name="message" placeholder='Message' rows="5" cols="50" maxLength="150"
+                              onChange={this.handleChange} required>
                     </textarea>
                     <br/>
                     <br/>
