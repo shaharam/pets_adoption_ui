@@ -17,9 +17,11 @@ class My_zone extends Component {
              category: '',
              picture_link: '',
              pets: [],
+             userName:'',
              pet: {}
              // id: ''
          };
+        this.getUserName();
         this.getUserPets();
     }
 
@@ -100,11 +102,21 @@ class My_zone extends Component {
             )
         })
     }
+    getUserName(){
+      axios.get('http://localhost:8080/pas/v1/admin/pets/adoption/users/user/' + localStorage.getItem('userId'))
+          .then(res => {
+           this.state.userName = res.data.name
+          });
+    }
 
     render() {
         return (
             <div className="adopt">
-
+                <br/>
+                <h1 style={{color: 'white'}}>
+                    Hello {this.state.userName} !
+                </h1>
+                <br/>
                 <table id="pets">
                     <tbody>
                     <tr>

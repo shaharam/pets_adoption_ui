@@ -72,7 +72,7 @@ class Sign_up extends Component {
                            onChange={this.changeData} required/>
                     <br/>
                     <br/>
-                    <input type="text" id="phone" name="phoneNumber" placeholder="Phone" onChange={this.changeData} minLength="10"
+                    <input type="text" id="phone" name="phoneNumber" placeholder="Phone" onChange={this.changeData} minLength="10" maxLength="10"
                            required/>
                     <br/>
                     <br/>
