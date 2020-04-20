@@ -113,8 +113,9 @@ class My_zone extends Component {
         return (
             <div className="adopt">
                 <br/>
+                <br/>
                 <h1 style={{color: 'white'}}>
-                    Hello {this.state.userName} !
+                    &nbsp;&nbsp;&nbsp;   Hello {this.state.userName} !
                 </h1>
                 <br/>
                 <table id="pets">
